@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import styles from './CryptoCurrency.module.css';
 
 const CryptoCurrency = ({
   symbol,
@@ -7,7 +8,7 @@ const CryptoCurrency = ({
   stockExchange,
   exchangeShortName,
 }) => (
-  <div className="cryptoCurrency">
+  <div className={styles.CryptoCurrency}>
     <header>
       <p>{name}</p>
       <p className="cryptoCurrency__symbol">{symbol}</p>

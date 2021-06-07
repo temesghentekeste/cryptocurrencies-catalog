@@ -1,5 +1,6 @@
+/* eslint-disable import/no-useless-path-segments */
 import './App.css';
-import CryptoCurrencies from './containers/CryptoCurrencies';
+import CryptoCurrencies from './containers/CryptoCurrencies/';
 
 function App() {
   return (

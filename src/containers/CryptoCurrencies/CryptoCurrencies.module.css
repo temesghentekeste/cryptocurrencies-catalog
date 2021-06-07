@@ -1,0 +1,4 @@
+.availableCryptocurrencies {
+  display: flex;
+  flex-wrap: wrap;
+}

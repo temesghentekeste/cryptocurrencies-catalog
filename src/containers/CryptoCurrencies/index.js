@@ -1,7 +1,10 @@
+/* eslint-disable import/no-useless-path-segments */
+
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCryptocurrenciesAsync } from '../redux/cryptocurrenciesSlice';
-import CryptoCurrency from './CryptoCurrency';
+import { getCryptocurrenciesAsync } from '../../redux/cryptocurrenciesSlice';
+import CryptoCurrency from '../../components/CryptoCurrency/';
+import styles from './CryptoCurrencies.module.css';
 
 const CryptoCurrencies = () => {
   const dispatch = useDispatch();
@@ -14,7 +17,7 @@ const CryptoCurrencies = () => {
 
   console.log(cryptoCurrencies);
   return (
-    <div className="availableCryptocurrencies">
+    <div className={styles.availableCryptocurrencies}>
       {cryptoCurrencies.map((crypto) => {
         const {
           symbol, name, currency, stockExchange, exchangeShortName,
