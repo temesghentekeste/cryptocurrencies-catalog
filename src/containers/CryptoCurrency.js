@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 
 const CryptoCurrency = ({
   symbol,
@@ -21,4 +21,11 @@ const CryptoCurrency = ({
   </div>
 );
 
+CryptoCurrency.propTypes = {
+  symbol: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  currency: PropTypes.string.isRequired,
+  stockExchange: PropTypes.string.isRequired,
+  exchangeShortName: PropTypes.string.isRequired,
+};
 export default CryptoCurrency;

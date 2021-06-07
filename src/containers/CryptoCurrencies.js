@@ -15,7 +15,7 @@ const CryptoCurrencies = () => {
   console.log(cryptoCurrencies);
   return (
     <div className="availableCryptocurrencies">
-      {CryptoCurrencies.map((crypto) => {
+      {cryptoCurrencies.map((crypto) => {
         const {
           symbol, name, currency, stockExchange, exchangeShortName,
         } = crypto;
