@@ -1,58 +1,27 @@
-import { createSlice } from '@reduxjs/toolkit';
+/* eslint-disable no-unused-vars */
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const initialState = [
-  {
-    id: 1,
-    symbol: 'RLCUSD',
-    name: 'iExec RLC USD',
-    currency: 'USD',
-    stockExchange: 'CCC',
-    exchangeShortName: 'CRYPTO',
-  },
+const initialState = [];
 
-  {
-    id: 1,
-    symbol: 'RLCUSD',
-    name: 'iExec RLC USD',
-    currency: 'USD',
-    stockExchange: 'CCC',
-    exchangeShortName: 'CRYPTO',
+export const getCryptocurrenciesAsync = createAsyncThunk(
+  'cryptocurrencies/getCryptocurrenciesAsync',
+  async () => {
+    const response = await fetch(
+      'https://financialmodelingprep.com/api/v3/historical-price-full/BTCUSD?apikey=58d955954a10a314214a86f3d3bd4fb3',
+    );
+    if (response.ok) {
+      const cryptos = await response.json();
+      return cryptos;
+    }
+    return new Error('Unable to fetch data.');
   },
-
-  {
-    id: 2,
-    symbol: 'RLCUSD',
-    name: 'iExec RLC USD',
-    currency: 'USD',
-    stockExchange: 'CCC',
-    exchangeShortName: 'CRYPTO',
-  },
-
-  {
-    id: 3,
-    symbol: 'RLCUSD',
-    name: 'iExec RLC USD',
-    currency: 'USD',
-    stockExchange: 'CCC',
-    exchangeShortName: 'CRYPTO',
-  },
-  {
-    id: 4,
-    symbol: 'RLCUSD',
-    name: 'iExec RLC USD',
-    currency: 'USD',
-    stockExchange: 'CCC',
-    exchangeShortName: 'CRYPTO',
-  },
-];
+);
 
 const cryptocurrenciesSlice = createSlice({
-  name: cryptosCurrencies,
+  name: 'cryptocurrencies',
   initialState,
-  reducers: {
-    getCryptocurrencies: (state, action) => {
-      return state;
-    },
+  extraReducers: {
+    [getCryptocurrenciesAsync.fulfilled]: (state, action) => action.payload,
   },
 });
 
