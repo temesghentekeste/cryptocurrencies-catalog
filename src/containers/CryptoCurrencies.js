@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCryptocurrenciesAsync } from '../redux/cryptocurrenciesSlice';
+import CryptoCurrency from './CryptoCurrency';
 
 const CryptoCurrencies = () => {
   const dispatch = useDispatch();
@@ -12,7 +13,24 @@ const CryptoCurrencies = () => {
   }, [dispatch]);
 
   console.log(cryptoCurrencies);
-  return <div>List of CryptoCurrencies</div>;
+  return (
+    <div className="availableCryptocurrencies">
+      {CryptoCurrencies.map((crypto) => {
+        const {
+          symbol, name, currency, stockExchange, exchangeShortName,
+        } = crypto;
+        return (
+          <CryptoCurrency
+            key={symbol}
+            name={name}
+            currency={currency}
+            stockExchange={stockExchange}
+            exchangeShortName={exchangeShortName}
+          />
+        );
+      })}
+    </div>
+  );
 };
 
 export default CryptoCurrencies;
