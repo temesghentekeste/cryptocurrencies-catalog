@@ -5,9 +5,7 @@ import { getCryptocurrenciesAsync } from '../redux/cryptocurrenciesSlice';
 const CryptoCurrencies = () => {
   const dispatch = useDispatch();
 
-  const cryptoCurrencies = useSelector(
-    (state) => state.cryptocurrencies.historical,
-  );
+  const cryptoCurrencies = useSelector((state) => state.cryptocurrencies);
 
   useEffect(() => {
     dispatch(getCryptocurrenciesAsync());
