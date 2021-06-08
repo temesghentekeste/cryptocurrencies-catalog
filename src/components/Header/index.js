@@ -1,8 +1,11 @@
+import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 
 const Header = () => (
   <header className={styles.header}>
-    <h1>Cryptocurrencies</h1>
+    <Link to="/">
+      <h1>Cryptocurrencies</h1>
+    </Link>
   </header>
 );
 
