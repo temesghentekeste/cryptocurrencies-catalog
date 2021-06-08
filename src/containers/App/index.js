@@ -10,6 +10,7 @@ import {
 } from '../../redux/cryptocurrenciesSlice';
 import Header from '../../components/Header';
 import NotFound from '../../components/NotFound';
+import CryptoQuote from '../CryptoQuote';
 
 function App() {
   const [filteredCryptos, setfilteredCryptos] = useState([]);
@@ -46,6 +47,9 @@ function App() {
         <Switch>
           <Route path="/" exact>
             <CryptoCurrencies cryptoCurrencies={filteredCryptos} />
+          </Route>
+          <Route path="/cryptoquote/:id">
+            <CryptoQuote />
           </Route>
           <Route path="*" component={NotFound} />
         </Switch>
