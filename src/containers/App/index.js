@@ -3,13 +3,13 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './App.module.css';
-import CryptoCurrencies from '../../containers/CryptoCurrencies/';
+import CryptoCurrencies from '../../components/CryptoCurrencies';
 import {
   filterCryptocurrencies,
   getCryptocurrenciesAsync,
 } from '../../redux/cryptocurrenciesSlice';
-import Header from '../Header/';
-import NotFound from '../NotFound/';
+import Header from '../../components/Header';
+import NotFound from '../../components/NotFound';
 
 function App() {
   const [filteredCryptos, setfilteredCryptos] = useState([]);

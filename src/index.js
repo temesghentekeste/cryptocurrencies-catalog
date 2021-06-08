@@ -4,8 +4,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import style from './index.module.css';
-import App from './components/App/';
+import App from './containers/App/';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/store';
 

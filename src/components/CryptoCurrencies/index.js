@@ -1,7 +1,7 @@
 /* eslint-disable import/no-useless-path-segments */
 /* eslint-disable react/forbid-prop-types */
 import PropTypes from 'prop-types';
-import CryptoCurrency from '../../components/CryptoCurrency/';
+import CryptoCurrency from '../CryptoCurrency';
 import styles from './CryptoCurrencies.module.css';
 
 const CryptoCurrencies = ({ cryptoCurrencies }) => {
@@ -9,11 +9,10 @@ const CryptoCurrencies = ({ cryptoCurrencies }) => {
 
   return (
     <div className={styles.availableCryptocurrencies}>
-      {cryptoCurrencies
-        && cryptoCurrencies.map((crypto) => {
-          const {
-            symbol, name, currency, stockExchange, exchangeShortName,
-          } = crypto;
+      {cryptoCurrencies &&
+        cryptoCurrencies.map((crypto) => {
+          const { symbol, name, currency, stockExchange, exchangeShortName } =
+            crypto;
           return (
             <CryptoCurrency
               key={symbol}
