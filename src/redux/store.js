@@ -5,6 +5,6 @@ import cryptocurrencyQuoteReducer from './cryptoQuotesSlice';
 export default configureStore({
   reducer: {
     cryptocurrencies: cryptocurrenciesReducer,
-    cryptocurrencyQuote: cryptocurrencyQuoteReducer,
+    cryptocurrencyquote: cryptocurrencyQuoteReducer,
   },
 });
