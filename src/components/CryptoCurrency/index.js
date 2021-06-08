@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import styles from './CryptoCurrency.module.css';
+import mainStyle from '../../index.module.css';
 
 const CryptoCurrency = ({
   symbol,
@@ -8,16 +9,20 @@ const CryptoCurrency = ({
   stockExchange,
   exchangeShortName,
 }) => (
-  <div className={styles.CryptoCurrency}>
+  <div className={styles.cryptoCurrencyCard}>
     <header>
-      <p>{name}</p>
-      <p className="cryptoCurrency__symbol">{symbol}</p>
+      <p className={mainStyle.badge}>{name}</p>
+      <p className={styles.cryptoCurrencyCard__symbol}>{symbol}</p>
     </header>
 
-    <footer>
+    <div className={styles.cryptoCurrencyCard__body}>
       <span>{currency}</span>
       <span>{stockExchange}</span>
       <span>{exchangeShortName}</span>
+    </div>
+
+    <footer>
+      <button type="button">More...</button>
     </footer>
   </div>
 );

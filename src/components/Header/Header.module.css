@@ -1,0 +1,14 @@
+.header {
+  margin: 2rem 0;
+  padding: 1rem;
+  background: linear-gradient(
+    90deg,
+    rgb(109, 111, 112) 0%,
+    rgba(130, 120, 143, 0.897) 25%
+  );
+  color: #fff;
+}
+
+.header h1 {
+  font-size: 1.8rem;
+}

@@ -25,6 +25,7 @@ const CryptoCurrencies = () => {
         return (
           <CryptoCurrency
             key={symbol}
+            symbol={symbol}
             name={name}
             currency={currency}
             stockExchange={stockExchange}

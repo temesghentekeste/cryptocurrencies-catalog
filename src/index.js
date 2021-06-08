@@ -1,8 +1,11 @@
+/* eslint-disable import/no-useless-path-segments */
+/* eslint-disable  no-unused-vars */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import './index.css';
-import App from './App';
+import style from './index.module.css';
+import App from './components/App/';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/store';
 
