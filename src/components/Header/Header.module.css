@@ -7,8 +7,17 @@
     rgba(130, 120, 143, 0.897) 25%
   );
   color: #fff;
+
+  display: flex;
+  justify-content: space-between;
 }
 
 .header h1 {
   font-size: 1.8rem;
+}
+
+.header input {
+  flex: 0 0 45%;
+  padding: 0.4rem 0.8rem;
+  outline: none;
 }

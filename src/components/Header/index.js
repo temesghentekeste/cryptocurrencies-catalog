@@ -6,6 +6,10 @@ const Header = () => (
     <Link to="/">
       <h1>Cryptocurrencies</h1>
     </Link>
+    <input
+      type="text"
+      placeholder="Search for something. Ex. iExec, Bitcoin, DOGEUSD..."
+    />
   </header>
 );
 
