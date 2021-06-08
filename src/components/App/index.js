@@ -4,7 +4,10 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './App.module.css';
 import CryptoCurrencies from '../../containers/CryptoCurrencies/';
-import { getCryptocurrenciesAsync } from '../../redux/cryptocurrenciesSlice';
+import {
+  filterCryptocurrencies,
+  getCryptocurrenciesAsync,
+} from '../../redux/cryptocurrenciesSlice';
 import Header from '../Header/';
 import NotFound from '../NotFound/';
 
@@ -34,7 +37,7 @@ function App() {
   useEffect(() => {
     dispatch(getCryptocurrenciesAsync());
     setfilteredCryptos(cryptoCurrencies);
-  }, [dispatch]);
+  }, [dispatch, filterCryptocurrencies]);
 
   return (
     <div className={styles.app}>

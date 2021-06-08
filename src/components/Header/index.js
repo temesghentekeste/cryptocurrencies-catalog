@@ -7,6 +7,11 @@ import styles from './Header.module.css';
 const Header = ({ handleFilter }) => {
   const [keyword, setKeyword] = useState('');
 
+  const handleChange = (e) => {
+    setKeyword(e.target.value);
+    handleFilter(keyword);
+  };
+
   const handleClick = () => {
     handleFilter(keyword);
   };
@@ -20,7 +25,7 @@ const Header = ({ handleFilter }) => {
         type="text"
         placeholder="Search for something. Ex. iExec, Bitcoin, DOGEUSD..."
         value={keyword}
-        onChange={(e) => setKeyword(e.target.value)}
+        onChange={(e) => handleChange(e)}
       />
       <button type="button" onClick={handleClick}>
         Search
