@@ -1,0 +1,37 @@
+.cryptoQuoteCard {
+  margin: auto;
+  max-width: 700px;
+  background: #7e8083;
+  padding: 1rem;
+  color: #fff;
+}
+
+.cryptoQuoteCard header {
+  background: #4a4b4b;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cryptoQuote__stats {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cryptoQuote__stats__dayLowHigh,
+.cryptoQuote__stats__yearLowHigh {
+  flex: 0 0 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cryptoQuote__stats__dayLowHigh {
+  margin-right: 0.8rem;
+}
+
+.cryptoQuoteCard footer {
+  flex: 1;
+}
