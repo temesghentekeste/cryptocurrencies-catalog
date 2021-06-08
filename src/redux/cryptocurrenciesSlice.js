@@ -20,11 +20,21 @@ export const getCryptocurrenciesAsync = createAsyncThunk(
 const cryptocurrenciesSlice = createSlice({
   name: 'cryptocurrencies',
   initialState,
+  reducers: {
+    filterCryptocurrencies: (state, action) => {
+      console.log('payload', action.payload);
+      console.log('State', state);
+      return state.filter(
+        (crypto) => crypto.name.toLowerCase().includes(action.payload.toLowerCase())
+          || crypto.symbol.toLowerCase().includes(action.payload.toLowerCase()),
+      );
+    },
+  },
   extraReducers: {
     [getCryptocurrenciesAsync.fulfilled]: (state, action) => action.payload,
   },
 });
 
-export const { getCryptocurrencies } = cryptocurrenciesSlice.actions;
+export const { filterCryptocurrencies } = cryptocurrenciesSlice.actions;
 
 export default cryptocurrenciesSlice.reducer;

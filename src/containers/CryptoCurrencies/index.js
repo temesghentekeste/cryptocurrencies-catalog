@@ -1,40 +1,36 @@
 /* eslint-disable import/no-useless-path-segments */
-
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getCryptocurrenciesAsync } from '../../redux/cryptocurrenciesSlice';
+/* eslint-disable react/forbid-prop-types */
+import PropTypes from 'prop-types';
 import CryptoCurrency from '../../components/CryptoCurrency/';
 import styles from './CryptoCurrencies.module.css';
 
-const CryptoCurrencies = () => {
-  const dispatch = useDispatch();
+const CryptoCurrencies = ({ cryptoCurrencies }) => {
+  console.log('CryptoCurrencies', cryptoCurrencies);
 
-  const cryptoCurrencies = useSelector((state) => state.cryptocurrencies);
-
-  useEffect(() => {
-    dispatch(getCryptocurrenciesAsync());
-  }, [dispatch]);
-
-  console.log(cryptoCurrencies);
   return (
     <div className={styles.availableCryptocurrencies}>
-      {cryptoCurrencies.map((crypto) => {
-        const {
-          symbol, name, currency, stockExchange, exchangeShortName,
-        } = crypto;
-        return (
-          <CryptoCurrency
-            key={symbol}
-            symbol={symbol}
-            name={name}
-            currency={currency}
-            stockExchange={stockExchange}
-            exchangeShortName={exchangeShortName}
-          />
-        );
-      })}
+      {cryptoCurrencies
+        && cryptoCurrencies.map((crypto) => {
+          const {
+            symbol, name, currency, stockExchange, exchangeShortName,
+          } = crypto;
+          return (
+            <CryptoCurrency
+              key={symbol}
+              symbol={symbol}
+              name={name}
+              currency={currency}
+              stockExchange={stockExchange}
+              exchangeShortName={exchangeShortName}
+            />
+          );
+        })}
     </div>
   );
+};
+
+CryptoCurrencies.propTypes = {
+  cryptoCurrencies: PropTypes.array.isRequired,
 };
 
 export default CryptoCurrencies;
