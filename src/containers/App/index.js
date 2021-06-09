@@ -14,7 +14,7 @@ import {
 import Header from '../../components/Header';
 import NotFound from '../../components/NotFound';
 import CryptoQuote from '../CryptoQuote';
-import Dashboard from '../Dashboard';
+import Dashboard from '../Trending';
 
 function App() {
   const [filteredCryptos, setfilteredCryptos] = useState([]);
