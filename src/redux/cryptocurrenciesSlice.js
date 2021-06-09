@@ -7,7 +7,7 @@ export const getCryptocurrenciesAsync = createAsyncThunk(
   'cryptocurrencies/getCryptocurrenciesAsync',
   async () => {
     const response = await fetch(
-      'https://financialmodelingprep.com/api/v3/symbol/available-cryptocurrencies?apikey=58d955954a10a314214a86f3d3bd4fb3',
+      'https://financialmodelingprep.com/api/v3/symbol/available-cryptocurrencies?apikey=e708af923b22da2b8687e0d8e1255fb6',
     );
     if (response.ok) {
       const cryptos = await response.json();

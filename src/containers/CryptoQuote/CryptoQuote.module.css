@@ -21,17 +21,42 @@
   flex-wrap: wrap;
 }
 
-.cryptoQuote__stats__dayLowHigh,
-.cryptoQuote__stats__yearLowHigh {
-  flex: 0 0 50%;
+.cryptoQuote__stats__lowHigh,
+.cryptoQuote__stats__price {
+  width: 100%;
+  padding: 1rem 0.5rem;
+  background: #998695;
+  border-radius: 5px;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  margin-right: 0.8rem;
+  font-weight: 700;
+  font-size: 0.85rem;
 }
 
-.cryptoQuote__stats__dayLowHigh {
-  margin-right: 0.8rem;
+.cryptoQuote__stats__price {
+  background: rgb(146, 145, 156);
+  margin-top: 1rem;
+  flex-direction: column;
+  color: rgb(68, 80, 52);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.cryptoQuote__stats__price p {
+  padding: 1rem;
+  border-bottom: 1px dashed #fff;
 }
 
 .cryptoQuoteCard footer {
+  padding: 1rem;
+  background: #4a4b4b;
+  margin-top: 1rem;
+  border-radius: 5px;
   flex: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
 }

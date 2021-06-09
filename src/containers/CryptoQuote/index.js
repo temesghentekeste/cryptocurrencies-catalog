@@ -27,30 +27,37 @@ const CruyptoQuote = () => {
         </header>
 
         <div className={styles.cryptoQuote__stats}>
-          <div className={styles.cryptoQuote__stats__dayLowHigh}>
-            <span>Day Low: {cryptoQuote[0].dayLow}</span>
-            <span>Day High: {cryptoQuote[0].dayLow}</span>
+          <div className={styles.cryptoQuote__stats__lowHigh}>
+            <span>Day Low: ${cryptoQuote[0].dayLow}</span>
+            <span>Day High: ${cryptoQuote[0].dayHigh}</span>
+            <span>Year Low: ${cryptoQuote[0].yearLow}</span>
+            <span>Year High: ${cryptoQuote[0].yearHigh}</span>
           </div>
 
-          <div className="cryptoQuote__stats__yearLowHigh">
-            <span>Year Low {cryptoQuote[0].yearLow}</span>
-            <span>Year High {cryptoQuote[0].yearLow}</span>
-          </div>
-
-          <div className="cryptoQuote__stats__price">
-            <span>Market Cap: {cryptoQuote[0].marketCap}</span>
-            <span>Price (Average 50): {cryptoQuote[0].priceAvg50}</span>
-            <span>Price (Average 200): {cryptoQuote[0].priceAvg200}</span>
-            <span>Volume: {cryptoQuote[0].volume}</span>
-            <span>Average Volume: {cryptoQuote[0].averageVolume}</span>
+          <div className={styles.cryptoQuote__stats__price}>
+            <p>
+              Market Cap: <span>${cryptoQuote[0].marketCap}</span>
+            </p>
+            <p>
+              Price (Average 50): <span>${cryptoQuote[0].priceAvg50}</span>
+            </p>
+            <p>
+              Price (Average 200): <span>${cryptoQuote[0].priceAvg200}</span>
+            </p>
+            <p>
+              Volume: <span>{cryptoQuote[0].volume}</span>
+            </p>
+            <p>
+              Average Volume: <span>{cryptoQuote[0].avgVolume}</span>
+            </p>
           </div>
         </div>
 
         <footer>
           <span>Exchange: {cryptoQuote[0].exchange}</span>
           <span>Shares Outstanding: {cryptoQuote[0].sharesOutstanding}</span>
-          <span>Open: {cryptoQuote[0].open}</span>
-          <span>Previous Close: {cryptoQuote[0].previousClose}</span>
+          <span>Open: ${cryptoQuote[0].open}</span>
+          <span>Previous Close: ${cryptoQuote[0].previousClose}</span>
         </footer>
       </div>
     )

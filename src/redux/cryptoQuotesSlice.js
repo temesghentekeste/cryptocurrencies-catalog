@@ -7,7 +7,7 @@ export const getCryptocurrencyQuoteAsync = createAsyncThunk(
   'cryptocurrencies/getCryptocurrencyQuoteAsync',
   async (key) => {
     const response = await fetch(
-      `https://financialmodelingprep.com/api/v3/quote/${key}?apikey=58d955954a10a314214a86f3d3bd4fb3`,
+      `https://financialmodelingprep.com/api/v3/quote/${key}?apikey=e708af923b22da2b8687e0d8e1255fb6`,
     );
     if (response.ok) {
       const cryptoQuote = await response.json();
