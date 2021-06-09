@@ -1,14 +1,14 @@
 /* eslint-disable no-unused-vars */
 
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { allCryptosURL } from '../APIEndPoints';
+import { trendingCryptosURL } from '../APIEndPoints';
 
 const initialState = [];
 
-export const getCryptocurrenciesAsync = createAsyncThunk(
-  'cryptocurrencies/getCryptocurrenciesAsync',
+export const getTrendingCryptosAsync = createAsyncThunk(
+  'cryptocurrencies/getTrendingCryptosAsync',
   async () => {
-    const response = await fetch(allCryptosURL);
+    const response = await fetch(trendingCryptosURL);
     if (response.ok) {
       const cryptos = await response.json();
       return cryptos;
@@ -17,25 +17,13 @@ export const getCryptocurrenciesAsync = createAsyncThunk(
   }
 );
 
-const cryptocurrenciesSlice = createSlice({
+const trendingSlice = createSlice({
   name: 'cryptocurrencies',
   initialState,
-  reducers: {
-    filterCryptocurrencies: (state, action) => {
-      console.log('payload', action.payload);
-      console.log('State', state);
-      return state.filter(
-        (crypto) =>
-          crypto.name.toLowerCase().includes(action.payload.toLowerCase()) ||
-          crypto.symbol.toLowerCase().includes(action.payload.toLowerCase())
-      );
-    },
-  },
+
   extraReducers: {
-    [getCryptocurrenciesAsync.fulfilled]: (state, action) => action.payload,
+    [getTrendingCryptosAsync.fulfilled]: (state, action) => action.payload,
   },
 });
 
-export const { filterCryptocurrencies } = cryptocurrenciesSlice.actions;
-
-export default cryptocurrenciesSlice.reducer;
+export default trendingSlice.reducer;
