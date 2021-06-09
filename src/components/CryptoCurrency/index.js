@@ -15,7 +15,7 @@ const CryptoCurrency = ({ id, symbol, name, price, image }) => (
       </header>
 
       <div className={styles.cryptoCurrencyCard__body}>
-        <span>${price}</span>
+        <span>Price: ${price}</span>
         <img src={image} alt={name} />
       </div>
 

@@ -33,3 +33,9 @@
   font-weight: 700;
   color: #fff;
 }
+
+.cryptoCurrencyCard img {
+  display: block;
+  width: 90%;
+  margin: 1rem auto;
+}

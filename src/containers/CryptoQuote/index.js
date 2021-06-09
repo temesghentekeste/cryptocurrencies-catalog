@@ -4,7 +4,14 @@
 import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBackward } from '@fortawesome/fontawesome-svg-core';
+import {
+  faFacebook,
+  faTwitter,
+  faTelegram,
+  faReddit,
+} from '@fortawesome/free-brands-svg-icons';
 import createDOMPurify from 'dompurify';
 import { JSDOM } from 'jsdom';
 import { getCryptocurrencyQuoteAsync } from '../../redux/cryptoQuotesSlice';
@@ -60,6 +67,10 @@ const CruyptoQuote = () => {
 
               <div className={styles.cryptoQuote__stats__price}>
                 <p>
+                  Genesis Date: <span>{cryptoQuote.genesis_date}</span>
+                </p>
+
+                <p>
                   Market Cap:{' '}
                   <span>
                     ${cryptoQuote.market_data.market_cap.usd.toLocaleString()}
@@ -93,8 +104,43 @@ const CruyptoQuote = () => {
             </footer>
           </div>
         </div>
-        <div className={mainStyles.backLink}>
-          <Link to="/">Go back to Home</Link>
+        <div className={mainStyles.socialLinks}>
+          {cryptoQuote.links.twitter_screen_name && (
+            <a
+              href={`https://twitter.com/${cryptoQuote.links.twitter_screen_name}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FontAwesomeIcon icon={faTwitter} />
+            </a>
+          )}
+
+          {cryptoQuote.links.facebook_username && (
+            <a
+              href={`https://twitter.com/${cryptoQuote.links.facebook_username}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FontAwesomeIcon icon={faFacebook} />
+            </a>
+          )}
+
+          {cryptoQuote.links.telegram_channel_identifier && (
+            <a
+              href={`https://twitter.com/${cryptoQuote.links.telegram_channel_identifier}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FontAwesomeIcon icon={faTelegram} />
+            </a>
+          )}
+
+          {cryptoQuote.subreddit_url && (
+            <a href={cryptoQuote.subreddit_url} target="_blank" rel="noreferrer">
+              <FontAwesomeIcon icon={faReddit} />
+            </a>
+          )}
+          <Link to="/">Home</Link>
         </div>
       </>
     )

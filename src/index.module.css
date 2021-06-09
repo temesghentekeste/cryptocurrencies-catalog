@@ -35,16 +35,23 @@ code {
   font-weight: 700;
 }
 
-.backLink {
+.socialLinks {
   margin: auto;
+  margin-bottom: 2rem;
   display: flex;
   justify-content: flex-end;
 }
 
-.backLink > a {
-  background: #77a0cf;
+.socialLinks > a {
+  margin-right: 1rem;
+  background: #7e416f;
   display: inline-block;
   padding: 1rem;
   border-radius: 50%;
   font-weight: 700;
+  transition: ease-in-out 0.3s;
+}
+
+.socialLinks > a:hover {
+  background: #85266f;
 }
