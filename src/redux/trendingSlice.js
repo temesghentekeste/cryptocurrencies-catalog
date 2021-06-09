@@ -14,7 +14,7 @@ export const getTrendingCryptosAsync = createAsyncThunk(
       return cryptos;
     }
     return new Error('Unable to fetch data.');
-  }
+  },
 );
 
 const trendingSlice = createSlice({

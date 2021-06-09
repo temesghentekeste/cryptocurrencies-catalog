@@ -14,7 +14,7 @@ import {
 import Header from '../../components/Header';
 import NotFound from '../../components/NotFound';
 import CryptoQuote from '../CryptoQuote';
-import Dashboard from '../Trending';
+import Trending from '../Trending';
 
 function App() {
   const [filteredCryptos, setfilteredCryptos] = useState([]);
@@ -61,8 +61,8 @@ function App() {
             <CryptoQuote />
           </Route>
 
-          <Route path="/dashboard">
-            <Dashboard />
+          <Route path="/trending">
+            <Trending />
           </Route>
           <Route path="*" component={NotFound} />
         </Switch>

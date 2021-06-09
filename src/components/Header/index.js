@@ -26,8 +26,8 @@ const Header = ({ handleFilter }) => {
           <h1>Cryptocurrencies</h1>
         </Link>
 
-        <Link to="/dashboard">
-          <h3>Dashboard</h3>
+        <Link to="/trending">
+          <h3>Trending Dashboard</h3>
         </Link>
       </div>
 
