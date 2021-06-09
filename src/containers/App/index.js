@@ -38,7 +38,7 @@ function App() {
   useEffect(() => {
     dispatch(getCryptocurrenciesAsync());
     setfilteredCryptos(cryptoCurrencies);
-  }, [dispatch, filterCryptocurrencies]);
+  }, [dispatch, filterCryptocurrencies, cryptoCurrencies]);
 
   return (
     <div className={styles.app}>
