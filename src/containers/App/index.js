@@ -14,12 +14,15 @@ import CryptoQuote from '../CryptoQuote';
 
 function App() {
   const [filteredCryptos, setfilteredCryptos] = useState([]);
+  const [input, setInput] = useState(['']);
   const dispatch = useDispatch();
 
   const cryptoCurrencies = useSelector((state) => state.cryptocurrencies);
 
   const handleFilter = (keyword) => {
     console.log(keyword);
+
+    setInput(keyword);
 
     setfilteredCryptos(
       cryptoCurrencies.filter(
@@ -28,7 +31,7 @@ function App() {
       ),
     );
 
-    if (!filteredCryptos) {
+    if (!filteredCryptos || !input) {
       setfilteredCryptos(cryptoCurrencies);
     }
     console.log('App: all', cryptoCurrencies);
@@ -37,8 +40,11 @@ function App() {
 
   useEffect(() => {
     dispatch(getCryptocurrenciesAsync());
+  }, [dispatch]);
+
+  useEffect(() => {
     setfilteredCryptos(cryptoCurrencies);
-  }, [dispatch, filterCryptocurrencies]);
+  }, [filterCryptocurrencies]);
 
   return (
     <div className={styles.app}>

@@ -10,6 +10,16 @@
 
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.header__search {
+  background: #fff;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0.4rem;
+  border: 1px solid;
 }
 
 .header h1 {
@@ -17,7 +27,18 @@
 }
 
 .header input {
-  flex: 0 0 45%;
+  flex: 1;
   padding: 0.4rem 0.8rem;
   outline: none;
+  border: none;
+}
+
+.header button {
+  padding: 0.5rem 0.85rem;
+  border-radius: 0.4rem;
+  margin: 0.5rem;
+}
+
+.header button:hover {
+  cursor: pointer;
 }

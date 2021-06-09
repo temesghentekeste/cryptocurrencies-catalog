@@ -1,8 +1,8 @@
 .cryptoCurrencyCard {
+  width: 15rem;
   margin-bottom: 1.4rem;
   margin-right: 2rem;
   padding: 1rem;
-  flex: 1 0 20%;
   border: 1px solid gray;
   background: #444;
   color: white;

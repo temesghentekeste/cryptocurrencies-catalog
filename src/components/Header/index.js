@@ -21,15 +21,17 @@ const Header = ({ handleFilter }) => {
       <Link to="/">
         <h1>Cryptocurrencies</h1>
       </Link>
-      <input
-        type="text"
-        placeholder="Search for something. Ex. iExec, Bitcoin, DOGEUSD..."
-        value={keyword}
-        onChange={(e) => handleChange(e)}
-      />
-      <button type="button" onClick={handleClick}>
-        Search
-      </button>
+      <div className={styles.header__search}>
+        <input
+          type="text"
+          placeholder="Search for something. Ex. iExec, Bitcoin, DOGEUSD..."
+          value={keyword}
+          onChange={(e) => handleChange(e)}
+        />
+        <button type="button" onClick={handleClick}>
+          Search
+        </button>
+      </div>
     </header>
   );
 };
