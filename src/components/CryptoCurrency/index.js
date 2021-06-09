@@ -29,7 +29,7 @@ const CryptoCurrency = ({ id, symbol, name, price, image }) => (
 CryptoCurrency.propTypes = {
   symbol: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
 };

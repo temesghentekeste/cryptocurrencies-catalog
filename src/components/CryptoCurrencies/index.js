@@ -17,6 +17,7 @@ const CryptoCurrencies = ({ cryptoCurrencies }) => {
           return (
             <CryptoCurrency
               key={id}
+              id={id}
               symbol={symbol}
               name={name}
               price={price}

@@ -1,12 +1,37 @@
-.cryptoQuoteCard {
+.cryptoQuote {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cryptoQuote__description {
+  margin-right: 2rem;
+  padding: 1rem;
+  flex: 0 0 50%;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #333;
+  border-right: 4px solid orange;
+}
+
+.cryptoQuote__description a {
+  color: orange;
+}
+
+.cryptoQuote__description h2 {
+  margin-bottom: 0.8rem;
+}
+
+.cryptoQuote__Card {
   margin: auto;
-  max-width: 700px;
   background: #7e8083;
   padding: 1rem;
   color: #fff;
+  flex: 0 0 40%;
 }
 
-.cryptoQuoteCard header {
+.cryptoQuote__Card header {
   background: #4a4b4b;
   padding: 1rem;
   margin-bottom: 1rem;
@@ -19,6 +44,10 @@
 .cryptoQuote__stats {
   display: flex;
   flex-wrap: wrap;
+}
+
+.cryptoQuote__stats__lowHigh > * {
+  margin-bottom: 0.5rem;
 }
 
 .cryptoQuote__stats__lowHigh,
@@ -36,7 +65,7 @@
 }
 
 .cryptoQuote__stats__price {
-  background: rgb(146, 145, 156);
+  background: rgb(208, 207, 216);
   margin-top: 1rem;
   flex-direction: column;
   color: rgb(68, 80, 52);
@@ -49,7 +78,7 @@
   border-bottom: 1px dashed #fff;
 }
 
-.cryptoQuoteCard footer {
+.cryptoQuote__Card footer {
   padding: 1rem;
   background: #4a4b4b;
   margin-top: 1rem;
