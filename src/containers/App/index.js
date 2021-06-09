@@ -1,4 +1,7 @@
 /* eslint-disable import/no-useless-path-segments */
+/* eslint-disable implicit-arrow-linebreak */
+/* eslint-disable comma-dangle */
+/* eslint-disable operator-linebreak */
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -20,31 +23,29 @@ function App() {
   const cryptoCurrencies = useSelector((state) => state.cryptocurrencies);
 
   const handleFilter = (keyword) => {
-    console.log(keyword);
-
     setInput(keyword);
 
     setfilteredCryptos(
       cryptoCurrencies.filter(
-        (crypto) => crypto.name.toLowerCase().includes(keyword)
-          || crypto.symbol.toLowerCase().includes(keyword),
-      ),
+        (crypto) =>
+          crypto.name.toLowerCase().includes(keyword) ||
+          crypto.symbol.toLowerCase().includes(keyword)
+      )
     );
 
     if (!filteredCryptos || !input) {
       setfilteredCryptos(cryptoCurrencies);
     }
-    console.log('App: all', cryptoCurrencies);
-    console.log('App: filtered', filteredCryptos);
   };
 
-  useEffect(() => {
-    dispatch(getCryptocurrenciesAsync());
-  }, [dispatch]);
+  useEffect(async () => {
+    const response = await dispatch(getCryptocurrenciesAsync());
+    setfilteredCryptos(await response.payload);
+  }, []);
 
   useEffect(() => {
     setfilteredCryptos(cryptoCurrencies);
-  }, [filterCryptocurrencies]);
+  }, [dispatch, filterCryptocurrencies]);
 
   return (
     <div className={styles.app}>
