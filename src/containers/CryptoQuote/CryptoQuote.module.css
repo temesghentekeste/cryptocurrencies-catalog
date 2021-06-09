@@ -15,12 +15,19 @@
   border-right: 4px solid orange;
 }
 
-.cryptoQuote__description a {
-  color: orange;
+.cryptoQuote__description__title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
 }
 
-.cryptoQuote__description h2 {
-  margin-bottom: 0.8rem;
+.cryptoQuote__description a {
+  color: orange;
+  font-weight: 700;
+}
+
+.cryptoQuote__description__title h2 {
+  margin-left: 1rem;
 }
 
 .cryptoQuote__Card {

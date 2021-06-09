@@ -36,7 +36,10 @@ const CruyptoQuote = () => {
       <>
         <div className={styles.cryptoQuote}>
           <div className={styles.cryptoQuote__description}>
-            <h2>{cryptoQuote.name}</h2>
+            <div className={styles.cryptoQuote__description__title}>
+              <img src={cryptoQuote.image.small} alt={cryptoQuote.name} />
+              <h2>{cryptoQuote.name}</h2>
+            </div>
             <p>
               <div
                 dangerouslySetInnerHTML={{
@@ -136,7 +139,11 @@ const CruyptoQuote = () => {
           )}
 
           {cryptoQuote.subreddit_url && (
-            <a href={cryptoQuote.subreddit_url} target="_blank" rel="noreferrer">
+            <a
+              href={cryptoQuote.subreddit_url}
+              target="_blank"
+              rel="noreferrer"
+            >
               <FontAwesomeIcon icon={faReddit} />
             </a>
           )}
