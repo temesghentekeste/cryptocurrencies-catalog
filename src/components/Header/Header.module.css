@@ -13,6 +13,11 @@
   align-items: center;
 }
 
+.header__right {
+  display: flex;
+  align-items: center;
+}
+
 .header__search {
   background: #fff;
   width: 50%;
@@ -22,8 +27,14 @@
   border: 1px solid;
 }
 
-.header h1 {
-  font-size: 1.8rem;
+.header__right h1,
+.header__right h3 {
+  padding: 0.6rem 0.8rem;
+  margin-right: 1rem;
+  background: #8f5c84;
+  border-radius: 0.4rem;
+  font-size: 1.2rem;
+  transition: ease-in-out 0.3s;
 }
 
 .header input {
@@ -41,4 +52,9 @@
 
 .header button:hover {
   cursor: pointer;
+}
+
+.header__right h1:hover,
+.header__right h3:hover {
+  background: #7a306a;
 }

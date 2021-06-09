@@ -18,9 +18,16 @@ const Header = ({ handleFilter }) => {
 
   return (
     <header className={styles.header}>
-      <Link to="/">
-        <h1>Cryptocurrencies</h1>
-      </Link>
+      <div className={styles.header__right}>
+        <Link to="/">
+          <h1>Cryptocurrencies</h1>
+        </Link>
+
+        <Link to="/dashboard">
+          <h3>Dashboard</h3>
+        </Link>
+      </div>
+
       <div className={styles.header__search}>
         <input
           type="text"

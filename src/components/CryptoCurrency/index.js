@@ -1,17 +1,13 @@
 /* eslint-disable no-unused-vars */
+/* eslint-disable  object-curly-newline */
+/* eslint-disable  react/jsx-one-expression-per-line */
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styles from './CryptoCurrency.module.css';
 import mainStyle from '../../index.module.css';
 
-const CryptoCurrency = ({
-  symbol,
-  name,
-  currency,
-  stockExchange,
-  exchangeShortName,
-}) => (
-  <Link to={`/cryptoquote/${symbol}`}>
+const CryptoCurrency = ({ id, symbol, name, price, image }) => (
+  <Link to={`/cryptoquote/${id}`}>
     <div className={styles.cryptoCurrencyCard}>
       <header>
         <p className={mainStyle.badge}>{name}</p>
@@ -19,9 +15,8 @@ const CryptoCurrency = ({
       </header>
 
       <div className={styles.cryptoCurrencyCard__body}>
-        <span>{currency}</span>
-        <span>{stockExchange}</span>
-        <span>{exchangeShortName}</span>
+        <span>${price}</span>
+        <img src={image} alt={name} />
       </div>
 
       <footer>
@@ -34,8 +29,8 @@ const CryptoCurrency = ({
 CryptoCurrency.propTypes = {
   symbol: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  currency: PropTypes.string.isRequired,
-  stockExchange: PropTypes.string.isRequired,
-  exchangeShortName: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
 export default CryptoCurrency;

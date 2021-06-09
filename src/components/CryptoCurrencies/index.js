@@ -12,16 +12,15 @@ const CryptoCurrencies = ({ cryptoCurrencies }) => {
       {cryptoCurrencies
         && cryptoCurrencies.map((crypto) => {
           const {
-            symbol, name, currency, stockExchange, exchangeShortName,
+            id, symbol, name, current_price: price, image,
           } = crypto;
           return (
             <CryptoCurrency
-              key={symbol}
+              key={id}
               symbol={symbol}
               name={name}
-              currency={currency}
-              stockExchange={stockExchange}
-              exchangeShortName={exchangeShortName}
+              price={price}
+              image={image}
             />
           );
         })}

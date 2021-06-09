@@ -1,14 +1,14 @@
 /* eslint-disable no-unused-vars */
+
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { allCryptosURL } from '../APIEndPoints';
 
 const initialState = [];
 
 export const getCryptocurrenciesAsync = createAsyncThunk(
   'cryptocurrencies/getCryptocurrenciesAsync',
   async () => {
-    const response = await fetch(
-      'https://financialmodelingprep.com/api/v3/symbol/available-cryptocurrencies?apikey=e708af923b22da2b8687e0d8e1255fb6',
-    );
+    const response = await fetch(allCryptosURL);
     if (response.ok) {
       const cryptos = await response.json();
       return cryptos;
