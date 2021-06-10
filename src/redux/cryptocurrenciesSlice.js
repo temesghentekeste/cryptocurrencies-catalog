@@ -1,20 +1,22 @@
 /* eslint-disable no-unused-vars */
+/* eslint-disable no-param-reassign */
+/* eslint-disable comma-dangle */
 
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { allCryptosURL } from '../APIEndPoints';
 
-const initialState = [];
+const initialState = {
+  loading: null,
+  cryptoCurrencies: [],
+};
 
 export const getCryptocurrenciesAsync = createAsyncThunk(
   'cryptocurrencies/getCryptocurrenciesAsync',
   async () => {
     const response = await fetch(allCryptosURL);
-    if (response.ok) {
-      const cryptos = await response.json();
-      return cryptos;
-    }
-    return new Error('Unable to fetch data.');
-  },
+    const cryptos = await response.json();
+    return cryptos;
+  }
 );
 
 const cryptocurrenciesSlice = createSlice({
@@ -26,12 +28,19 @@ const cryptocurrenciesSlice = createSlice({
       console.log('State', state);
       return state.filter(
         (crypto) => crypto.name.toLowerCase().includes(action.payload.toLowerCase())
-          || crypto.symbol.toLowerCase().includes(action.payload.toLowerCase()),
+          || crypto.symbol.toLowerCase().includes(action.payload.toLowerCase())
       );
     },
   },
   extraReducers: {
-    [getCryptocurrenciesAsync.fulfilled]: (state, action) => action.payload,
+    [getCryptocurrenciesAsync.pending]: (state, action) => {
+      state.loading = 'loading';
+      state.cryptoCurrencies = [];
+    },
+    [getCryptocurrenciesAsync.fulfilled]: (state, action) => {
+      state.loading = null;
+      state.cryptoCurrencies = action.payload;
+    },
   },
 });
 

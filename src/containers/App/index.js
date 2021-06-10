@@ -5,6 +5,8 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { WaveLoading } from 'react-loadingg';
+
 import styles from './App.module.css';
 import CryptoCurrencies from '../../components/CryptoCurrencies';
 import {
@@ -15,13 +17,17 @@ import Header from '../../components/Header';
 import NotFound from '../../components/NotFound';
 import CryptoQuote from '../CryptoQuote';
 import Trending from '../Trending';
+import ErrorAlert from '../../components/Error';
 
 function App() {
   const [filteredCryptos, setfilteredCryptos] = useState([]);
   const [input, setInput] = useState(['']);
   const dispatch = useDispatch();
 
-  const cryptoCurrencies = useSelector((state) => state.cryptocurrencies);
+  const loading = useSelector((state) => state.cryptocurrencies.loading);
+  const cryptoCurrencies = useSelector(
+    (state) => state.cryptocurrencies.cryptoCurrencies
+  );
 
   const handleFilter = (keyword) => {
     setInput(keyword);
@@ -48,6 +54,14 @@ function App() {
   useEffect(() => {
     setfilteredCryptos(cryptoCurrencies);
   }, [dispatch, filterCryptocurrencies]);
+
+  if (loading) {
+    return <WaveLoading />;
+  }
+
+  if (filteredCryptos && filteredCryptos.error) {
+    return <ErrorAlert />;
+  }
 
   return (
     <div className={styles.app}>
