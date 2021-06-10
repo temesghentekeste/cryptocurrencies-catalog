@@ -19,6 +19,7 @@ import { getCryptocurrencyQuoteAsync } from '../../redux/cryptoQuotesSlice';
 
 import styles from './CryptoQuote.module.css';
 import mainStyles from '../../index.module.css';
+import ErrorAlert from '../../components/Error';
 
 const CruyptoQuote = () => {
   const [cryptoQuote, setCryptoQuote] = useState(null);
@@ -41,6 +42,10 @@ const CruyptoQuote = () => {
 
   if (loading) {
     return <WaveLoading />;
+  }
+
+  if (cryptoQuote && cryptoQuote.error) {
+    return <ErrorAlert />;
   }
 
   return (
