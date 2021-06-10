@@ -1,5 +1,5 @@
 .cryptoQuote {
-  margin-bottom: 2rem;
+  margin: 2rem 0;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -36,6 +36,8 @@
   padding: 1rem;
   color: #fff;
   flex: 0 0 40%;
+  align-self: flex-start;
+  border: 1px solid green;
 }
 
 .cryptoQuote__Card header {

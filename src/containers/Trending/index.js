@@ -22,43 +22,30 @@ const useStyles = makeStyles({
   },
 });
 
-function createData(name, calories, fat, carbs, protein) {
-  return {
-    name,
-    calories,
-    fat,
-    carbs,
-    protein,
-  };
-}
-
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
-
 const Trending = () => {
-  const [trendingCryptos, setTrendingCryptos] = useState([]);
+  const [trending, setTrending] = useState(null);
   const dispatch = useDispatch();
 
   const trendingCryptoCurrencies = useSelector(
     (state) => state.trendingcryptocurrencies
   );
 
-  useEffect(() => {
-    dispatch(getTrendingCryptosAsync());
-    setTrendingCryptos(trendingCryptoCurrencies);
+  useEffect(async () => {
+    const response = await dispatch(getTrendingCryptosAsync());
+    setTrending(await response.payload);
   }, []);
 
-  console.log(trendingCryptos);
+  useEffect(() => {
+    dispatch(getTrendingCryptosAsync());
+  }, [dispatch]);
+
+  console.log('trending: ', trendingCryptoCurrencies);
 
   const classes = useStyles();
 
   return (
-    trendingCryptoCurrencies.coins.length && (
+    trending
+    && trending.coins.length > 0 && (
       <div className={styles.trending}>
         <h3>
           Top-7 trending coins on CoinGecko{' '}
@@ -79,7 +66,7 @@ const Trending = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {trendingCryptoCurrencies.coins.map((row) => {
+              {trending.coins.map((row) => {
                 const {
                   id,
                   name,
