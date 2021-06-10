@@ -1,9 +1,15 @@
 /* eslint-disable no-unused-vars */
+/* eslint-disable no-param-reassign */
+/* eslint-disable comma-dangle */
 
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { trendingCryptosURL } from '../APIEndPoints';
 
-const initialState = [];
+const initialState = {
+  loading: null,
+  error: null,
+  trending: [],
+};
 
 export const getTrendingCryptosAsync = createAsyncThunk(
   'cryptocurrencies/getTrendingCryptosAsync',
@@ -14,7 +20,7 @@ export const getTrendingCryptosAsync = createAsyncThunk(
       return cryptos;
     }
     return new Error('Unable to fetch data.');
-  },
+  }
 );
 
 const trendingSlice = createSlice({
@@ -22,7 +28,18 @@ const trendingSlice = createSlice({
   initialState,
 
   extraReducers: {
-    [getTrendingCryptosAsync.fulfilled]: (state, action) => action.payload,
+    [getTrendingCryptosAsync.pending]: (state, action) => {
+      state.loading = 'loading';
+    },
+    [getTrendingCryptosAsync.rejected]: (state, action) => {
+      state.error = 'error';
+      state.posts = state.posts.concat(action.payload);
+    },
+    [getTrendingCryptosAsync.fulfilled]: (state, action) => {
+      state.loading = null;
+      state.error = null;
+      state.trending = action.payload;
+    },
   },
 });
 

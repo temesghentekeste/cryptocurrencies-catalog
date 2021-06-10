@@ -29,8 +29,13 @@ const Trending = () => {
   const dispatch = useDispatch();
 
   const trendingCryptoCurrencies = useSelector(
-    (state) => state.trendingcryptocurrencies
+    (state) => state.trendingcryptocurrencies.trending
   );
+
+  const loading = useSelector(
+    (state) => state.trendingcryptocurrencies.loading
+  );
+  const error = useSelector((state) => state.trendingcryptocurrencies.error);
 
   useEffect(async () => {
     const response = await dispatch(getTrendingCryptosAsync());
@@ -44,6 +49,14 @@ const Trending = () => {
   console.log('trending: ', trendingCryptoCurrencies);
 
   const classes = useStyles();
+
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
+
+  if (error) {
+    return <h1>error</h1>;
+  }
 
   return (
     trending
