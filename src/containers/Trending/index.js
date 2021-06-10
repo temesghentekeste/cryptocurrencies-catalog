@@ -41,6 +41,8 @@ const Trending = () => {
   useEffect(async () => {
     const response = await dispatch(getTrendingCryptosAsync());
     setTrending(await response.payload);
+
+    return () => setTrending(null);
   }, []);
 
   const classes = useStyles();

@@ -10,8 +10,6 @@ const Header = ({ handleFilter }) => {
 
   const handleChange = (e) => {
     setKeyword(e.target.value);
-    handleFilter(keyword);
-    history.push('/');
   };
 
   const handleClick = () => {
