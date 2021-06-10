@@ -37,9 +37,9 @@ const Trending = () => {
     setTrending(await response.payload);
   }, []);
 
-  useEffect(() => {
-    dispatch(getTrendingCryptosAsync());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getTrendingCryptosAsync());
+  // }, [dispatch]);
 
   console.log('trending: ', trendingCryptoCurrencies);
 
