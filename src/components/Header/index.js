@@ -1,22 +1,23 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import styles from './Header.module.css';
 
-const Header = ({ handleFilter, pathname }) => {
+const Header = ({ handleFilter }) => {
   const [keyword, setKeyword] = useState('');
+  const history = useHistory();
 
   const handleChange = (e) => {
     setKeyword(e.target.value);
     handleFilter(keyword);
+    history.push('/');
   };
 
   const handleClick = () => {
     handleFilter(keyword);
+    history.push('/');
   };
-
-  console.log(pathname);
 
   return (
     <header className={styles.header}>
@@ -29,27 +30,23 @@ const Header = ({ handleFilter, pathname }) => {
           <h3>Trending Dashboard</h3>
         </Link>
       </div>
-
-      {pathname === '/' && (
-        <div className={styles.header__search}>
-          <input
-            type="text"
-            placeholder="Search for something. Ex. iExec, Bitcoin, DOGEUSD..."
-            value={keyword}
-            onChange={(e) => handleChange(e)}
-          />
-          <button type="button" onClick={handleClick}>
-            Search
-          </button>
-        </div>
-      )}
+      <div className={styles.header__search}>
+        <input
+          type="text"
+          placeholder="Search for something. Ex. iExec, Bitcoin, DOGEUSD..."
+          value={keyword}
+          onChange={(e) => handleChange(e)}
+        />
+        <button type="button" onClick={handleClick}>
+          Search
+        </button>
+      </div>
     </header>
   );
 };
 
 Header.propTypes = {
   handleFilter: PropTypes.func.isRequired,
-  pathname: PropTypes.string.isRequired,
 };
 
 export default Header;
