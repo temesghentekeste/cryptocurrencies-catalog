@@ -31,7 +31,7 @@
 }
 
 .cryptoQuote__Card {
-  margin: auto;
+  margin: 0 auto;
   background: #7e8083;
   padding: 1rem;
   color: #fff;

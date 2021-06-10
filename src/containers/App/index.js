@@ -23,6 +23,7 @@ function App() {
   const [filteredCryptos, setfilteredCryptos] = useState([]);
   const [input, setInput] = useState(['']);
   const dispatch = useDispatch();
+  const { pathname } = window.location;
 
   const loading = useSelector((state) => state.cryptocurrencies.loading);
   const cryptoCurrencies = useSelector(
@@ -50,7 +51,6 @@ function App() {
     setfilteredCryptos(await response.payload);
   }, []);
 
-  console.log(cryptoCurrencies);
   useEffect(() => {
     setfilteredCryptos(cryptoCurrencies);
   }, [dispatch, filterCryptocurrencies]);
@@ -66,7 +66,7 @@ function App() {
   return (
     <div className={styles.app}>
       <Router>
-        <Header handleFilter={handleFilter} />
+        <Header handleFilter={handleFilter} pathname={pathname} />
         <Switch>
           <Route path="/" exact>
             <CryptoCurrencies cryptoCurrencies={filteredCryptos} />

@@ -4,10 +4,9 @@ import PropTypes from 'prop-types';
 
 import styles from './Header.module.css';
 
-const Header = ({ handleFilter }) => {
+const Header = ({ handleFilter, pathname }) => {
   const [keyword, setKeyword] = useState('');
 
-  const { pathname } = window.location;
   const handleChange = (e) => {
     setKeyword(e.target.value);
     handleFilter(keyword);
@@ -50,6 +49,7 @@ const Header = ({ handleFilter }) => {
 
 Header.propTypes = {
   handleFilter: PropTypes.func.isRequired,
+  pathname: PropTypes.string.isRequired,
 };
 
 export default Header;

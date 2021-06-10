@@ -38,8 +38,6 @@ const CruyptoQuote = () => {
     setCryptoQuote(await response.payload);
   }, []);
 
-  console.log('cryptoQuote: ', cryptoQuote, 'loading', loading);
-
   if (loading) {
     return <WaveLoading />;
   }

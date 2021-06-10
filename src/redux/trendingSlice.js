@@ -25,12 +25,10 @@ const trendingSlice = createSlice({
 
   extraReducers: {
     [getTrendingCryptosAsync.pending]: (state, action) => {
-      console.log('Running loading...');
       state.loading = 'loading';
     },
 
     [getTrendingCryptosAsync.fulfilled]: (state, action) => {
-      console.log('Running fulfilled...', action.payload);
       state.loading = null;
       state.trending = action.payload;
     },

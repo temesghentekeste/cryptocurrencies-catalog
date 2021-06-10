@@ -23,14 +23,10 @@ const cryptocurrenciesSlice = createSlice({
   name: 'cryptocurrencies',
   initialState,
   reducers: {
-    filterCryptocurrencies: (state, action) => {
-      console.log('payload', action.payload);
-      console.log('State', state);
-      return state.filter(
-        (crypto) => crypto.name.toLowerCase().includes(action.payload.toLowerCase())
+    filterCryptocurrencies: (state, action) => state.filter(
+      (crypto) => crypto.name.toLowerCase().includes(action.payload.toLowerCase())
           || crypto.symbol.toLowerCase().includes(action.payload.toLowerCase())
-      );
-    },
+    ),
   },
   extraReducers: {
     [getCryptocurrenciesAsync.pending]: (state, action) => {

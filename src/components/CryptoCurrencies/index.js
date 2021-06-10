@@ -4,12 +4,9 @@ import PropTypes from 'prop-types';
 import CryptoCurrency from '../CryptoCurrency';
 import styles from './CryptoCurrencies.module.css';
 
-const CryptoCurrencies = ({ cryptoCurrencies }) => {
-  console.log('CryptoCurrencies', cryptoCurrencies);
-
-  return (
-    <div className={styles.availableCryptocurrencies}>
-      {cryptoCurrencies
+const CryptoCurrencies = ({ cryptoCurrencies }) => (
+  <div className={styles.availableCryptocurrencies}>
+    {cryptoCurrencies
         && cryptoCurrencies.map((crypto) => {
           const {
             id, symbol, name, current_price: price, image,
@@ -25,9 +22,8 @@ const CryptoCurrencies = ({ cryptoCurrencies }) => {
             />
           );
         })}
-    </div>
-  );
-};
+  </div>
+);
 
 CryptoCurrencies.propTypes = {
   cryptoCurrencies: PropTypes.array.isRequired,
