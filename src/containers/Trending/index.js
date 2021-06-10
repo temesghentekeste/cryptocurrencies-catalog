@@ -6,6 +6,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
+import { BoxLoading } from 'react-loadingg';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -17,6 +18,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getTrendingCryptosAsync } from '../../redux/trendingSlice';
 import styles from './Trending.module.css';
 import mainStyles from '../../index.module.css';
+import ErrorAlert from '../../components/Error';
 
 const useStyles = makeStyles({
   table: {
@@ -46,16 +48,16 @@ const Trending = () => {
   //   dispatch(getTrendingCryptosAsync());
   // }, [dispatch]);
 
-  console.log('trending: ', trendingCryptoCurrencies);
+  console.log('trending: ', trendingCryptoCurrencies, 'error: ', error);
 
   const classes = useStyles();
 
   if (loading) {
-    return <h1>Loading...</h1>;
+    return <BoxLoading />;
   }
 
-  if (error) {
-    return <h1>error</h1>;
+  if (trending && trending.error) {
+    return <ErrorAlert />;
   }
 
   return (

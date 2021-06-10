@@ -15,11 +15,8 @@ export const getTrendingCryptosAsync = createAsyncThunk(
   'cryptocurrencies/getTrendingCryptosAsync',
   async () => {
     const response = await fetch(trendingCryptosURL);
-    if (response.ok) {
-      const cryptos = await response.json();
-      return cryptos;
-    }
-    return new Error('Unable to fetch data.');
+    const cryptos = await response.json();
+    return cryptos;
   }
 );
 
@@ -29,16 +26,21 @@ const trendingSlice = createSlice({
 
   extraReducers: {
     [getTrendingCryptosAsync.pending]: (state, action) => {
+      console.log('Running loading...');
       state.loading = 'loading';
     },
-    [getTrendingCryptosAsync.rejected]: (state, action) => {
-      state.error = 'error';
-      state.posts = state.posts.concat(action.payload);
-    },
+
     [getTrendingCryptosAsync.fulfilled]: (state, action) => {
+      console.log('Running fulfilled...', action.payload);
       state.loading = null;
-      state.error = null;
-      state.trending = action.payload;
+
+      if (action.payload === 'Error: Unable to fetch data.') {
+        state.error = action.payload;
+        state.trending = [];
+      } else {
+        state.error = null;
+        state.trending = action.payload;
+      }
     },
   },
 });
