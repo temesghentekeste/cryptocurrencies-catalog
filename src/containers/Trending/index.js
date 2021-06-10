@@ -1,6 +1,8 @@
 /* eslint-disable comma-dangle */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
+/* eslint-disable react/jsx-one-expression-per-line
+ */
 import { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -12,6 +14,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { useDispatch, useSelector } from 'react-redux';
 import { getTrendingCryptosAsync } from '../../redux/trendingSlice';
+import styles from './Trending.module.css';
 
 const useStyles = makeStyles({
   table: {
@@ -21,7 +24,11 @@ const useStyles = makeStyles({
 
 function createData(name, calories, fat, carbs, protein) {
   return {
-    name, calories, fat, carbs, protein
+    name,
+    calories,
+    fat,
+    carbs,
+    protein,
   };
 }
 
@@ -51,32 +58,58 @@ const Trending = () => {
   const classes = useStyles();
 
   return (
-    <TableContainer component={Paper}>
-      <Table className={classes.table} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.name}>
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+    trendingCryptoCurrencies.coins.length && (
+      <div className={styles.trending}>
+        <h3>
+          Top-7 trending coins on CoinGecko{' '}
+          <span>
+            Searched by users in the last 24 hours (Ordered by most popular
+            first)
+          </span>
+        </h3>
+        <TableContainer component={Paper}>
+          <Table className={classes.table} aria-label="simple table">
+            <TableHead>
+              <TableRow>
+                <TableCell>Name</TableCell>
+                <TableCell align="right">Symbol</TableCell>
+                <TableCell align="right">Price&nbsp;(btc)</TableCell>
+                <TableCell align="right">Market Cap &nbsp;(rank)</TableCell>
+                <TableCell align="right">Score</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {trendingCryptoCurrencies.coins.map((row) => {
+                const {
+                  id,
+                  name,
+                  symbol,
+                  market_cap_rank: rank,
+                  price_btc: price,
+                  score,
+                  thumb,
+                } = row.item;
+                return (
+                  <TableRow key={id}>
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      className={styles.trending__name}
+                    >
+                      {name} <img src={thumb} alt={name} />
+                    </TableCell>
+                    <TableCell align="right">{symbol}</TableCell>
+                    <TableCell align="right">{price}</TableCell>
+                    <TableCell align="right">{rank}</TableCell>
+                    <TableCell align="right">{score}</TableCell>
+                  </TableRow>
+                );
+              })}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </div>
+    )
   );
 };
 

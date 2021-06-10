@@ -1,0 +1,20 @@
+.trending__name {
+  display: flex;
+  align-items: center;
+}
+
+.trending__name img {
+  margin-left: 1rem;
+}
+
+.trending h3 {
+  color: rgb(109, 44, 129);
+  margin: 1rem 0;
+  font-size: 1.4rem;
+}
+
+.trending span {
+  display: block;
+  font-size: 0.85rem;
+  color: rgb(161, 87, 184);
+}
