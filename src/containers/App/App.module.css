@@ -2,3 +2,9 @@
   max-width: 90%;
   margin: auto;
 }
+
+@media screen and (max-width: 768) {
+  .app {
+    width: 100%;
+  }
+}

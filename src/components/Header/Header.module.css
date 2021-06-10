@@ -15,6 +15,7 @@
 
 .header__right {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 }
 
@@ -57,4 +58,31 @@
 .header__right h1:hover,
 .header__right h3:hover {
   background: #7a306a;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .header__right {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+
+  .header__search {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 605px) {
+  .header__right {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .header__right > * {
+    display: block;
+    margin-bottom: 1rem;
+  }
 }
