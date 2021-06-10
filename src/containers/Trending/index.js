@@ -6,7 +6,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import { BoxLoading } from 'react-loadingg';
+import { WaveLoading } from 'react-loadingg';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -37,7 +37,6 @@ const Trending = () => {
   const loading = useSelector(
     (state) => state.trendingcryptocurrencies.loading
   );
-  const error = useSelector((state) => state.trendingcryptocurrencies.error);
 
   useEffect(async () => {
     const response = await dispatch(getTrendingCryptosAsync());
@@ -48,12 +47,12 @@ const Trending = () => {
   //   dispatch(getTrendingCryptosAsync());
   // }, [dispatch]);
 
-  console.log('trending: ', trendingCryptoCurrencies, 'error: ', error);
+  console.log('trending: ', trendingCryptoCurrencies);
 
   const classes = useStyles();
 
   if (loading) {
-    return <BoxLoading />;
+    return <WaveLoading />;
   }
 
   if (trending && trending.error) {

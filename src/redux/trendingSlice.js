@@ -7,7 +7,6 @@ import { trendingCryptosURL } from '../APIEndPoints';
 
 const initialState = {
   loading: null,
-  error: null,
   trending: [],
 };
 
@@ -33,14 +32,7 @@ const trendingSlice = createSlice({
     [getTrendingCryptosAsync.fulfilled]: (state, action) => {
       console.log('Running fulfilled...', action.payload);
       state.loading = null;
-
-      if (action.payload === 'Error: Unable to fetch data.') {
-        state.error = action.payload;
-        state.trending = [];
-      } else {
-        state.error = null;
-        state.trending = action.payload;
-      }
+      state.trending = action.payload;
     },
   },
 });

@@ -1,11 +1,12 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable comma-dangle */
 /* eslint-disable no-unused-vars */
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBackward } from '@fortawesome/fontawesome-svg-core';
+import { WaveLoading } from 'react-loadingg';
+
 import {
   faFacebook,
   faTwitter,
@@ -20,17 +21,28 @@ import styles from './CryptoQuote.module.css';
 import mainStyles from '../../index.module.css';
 
 const CruyptoQuote = () => {
+  const [cryptoQuote, setCryptoQuote] = useState(null);
   const { window } = new JSDOM('');
   const DOMPurify = createDOMPurify(window);
   const { id } = useParams();
   const dispatch = useDispatch();
 
-  const cryptoQuote = useSelector((state) => state.cryptocurrencyquote);
-  useEffect(() => {
-    dispatch(getCryptocurrencyQuoteAsync(id));
-  }, [dispatch]);
+  const cryptoQuote2 = useSelector(
+    (state) => state.cryptocurrencyquote.cryptoQuote
+  );
+  const loading = useSelector((state) => state.cryptocurrencyquote.loading);
 
-  console.log('cryptoQuote: ', cryptoQuote);
+  useEffect(async () => {
+    const response = await dispatch(getCryptocurrencyQuoteAsync(id));
+    setCryptoQuote(await response.payload);
+  }, []);
+
+  console.log('cryptoQuote: ', cryptoQuote, 'loading', loading);
+
+  if (loading) {
+    return <WaveLoading />;
+  }
+
   return (
     cryptoQuote && (
       <>
@@ -41,7 +53,7 @@ const CruyptoQuote = () => {
               <h2>{cryptoQuote.name}</h2>
             </div>
             <p>
-              <div
+              <span
                 dangerouslySetInnerHTML={{
                   __html: DOMPurify.sanitize(cryptoQuote.description.en),
                 }}
