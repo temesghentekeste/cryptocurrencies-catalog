@@ -4,3 +4,15 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+
+@media screen and (max-width: 982px) {
+  .availableCryptocurrencies {
+    margin: 1rem 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .availableCryptocurrencies {
+    margin: 1rem 0;
+  }
+}

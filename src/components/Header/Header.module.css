@@ -15,7 +15,7 @@
 
 .header__right {
   display: flex;
-  flex-wrap: wrap;
+  flex: 1;
   align-items: center;
 }
 
@@ -60,7 +60,13 @@
   background: #7a306a;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 982px) {
+  .header__search {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 825px) {
   .header {
     flex-direction: column;
   }

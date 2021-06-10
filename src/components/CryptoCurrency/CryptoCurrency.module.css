@@ -39,3 +39,22 @@
   width: 90%;
   margin: 1rem auto;
 }
+
+@media screen and (max-width: 982px) {
+  .cryptoCurrencyCard {
+    width: 20rem;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .cryptoCurrencyCard {
+    width: 18rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cryptoCurrencyCard {
+    width: 100%;
+    flex: 1;
+  }
+}
