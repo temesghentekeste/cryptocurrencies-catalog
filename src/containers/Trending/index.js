@@ -4,6 +4,7 @@
 /* eslint-disable react/jsx-one-expression-per-line
  */
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -15,6 +16,7 @@ import Paper from '@material-ui/core/Paper';
 import { useDispatch, useSelector } from 'react-redux';
 import { getTrendingCryptosAsync } from '../../redux/trendingSlice';
 import styles from './Trending.module.css';
+import mainStyles from '../../index.module.css';
 
 const useStyles = makeStyles({
   table: {
@@ -46,56 +48,61 @@ const Trending = () => {
   return (
     trending
     && trending.coins.length > 0 && (
-      <div className={styles.trending}>
-        <h3>
-          Top-7 trending coins on CoinGecko{' '}
-          <span>
-            Searched by users in the last 24 hours (Ordered by most popular
-            first)
-          </span>
-        </h3>
-        <TableContainer component={Paper}>
-          <Table className={classes.table} aria-label="simple table">
-            <TableHead>
-              <TableRow>
-                <TableCell>Name</TableCell>
-                <TableCell align="right">Symbol</TableCell>
-                <TableCell align="right">Price&nbsp;(btc)</TableCell>
-                <TableCell align="right">Market Cap &nbsp;(rank)</TableCell>
-                <TableCell align="right">Score</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {trending.coins.map((row) => {
-                const {
-                  id,
-                  name,
-                  symbol,
-                  market_cap_rank: rank,
-                  price_btc: price,
-                  score,
-                  thumb,
-                } = row.item;
-                return (
-                  <TableRow key={id}>
-                    <TableCell
-                      component="th"
-                      scope="row"
-                      className={styles.trending__name}
-                    >
-                      {name} <img src={thumb} alt={name} />
-                    </TableCell>
-                    <TableCell align="right">{symbol}</TableCell>
-                    <TableCell align="right">{price}</TableCell>
-                    <TableCell align="right">{rank}</TableCell>
-                    <TableCell align="right">{score}</TableCell>
-                  </TableRow>
-                );
-              })}
-            </TableBody>
-          </Table>
-        </TableContainer>
-      </div>
+      <>
+        <div className={styles.trending}>
+          <h3>
+            Top-7 trending coins on CoinGecko{' '}
+            <span>
+              Searched by users in the last 24 hours (Ordered by most popular
+              first)
+            </span>
+          </h3>
+          <TableContainer component={Paper}>
+            <Table className={classes.table} aria-label="simple table">
+              <TableHead className={classes.trending__table__head}>
+                <TableRow>
+                  <TableCell>Name</TableCell>
+                  <TableCell align="right">Symbol</TableCell>
+                  <TableCell align="right">Price&nbsp;(btc)</TableCell>
+                  <TableCell align="right">Market Cap &nbsp;(rank)</TableCell>
+                  <TableCell align="right">Score</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {trending.coins.map((row) => {
+                  const {
+                    id,
+                    name,
+                    symbol,
+                    market_cap_rank: rank,
+                    price_btc: price,
+                    score,
+                    thumb,
+                  } = row.item;
+                  return (
+                    <TableRow key={id}>
+                      <TableCell
+                        component="th"
+                        scope="row"
+                        className={styles.trending__name}
+                      >
+                        {name} <img src={thumb} alt={name} />
+                      </TableCell>
+                      <TableCell align="right">{symbol}</TableCell>
+                      <TableCell align="right">{price}</TableCell>
+                      <TableCell align="right">{rank}</TableCell>
+                      <TableCell align="right">{score}</TableCell>
+                    </TableRow>
+                  );
+                })}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </div>
+        <div className={mainStyles.socialLinks}>
+          <Link to="/">Home</Link>
+        </div>
+      </>
     )
   );
 };
