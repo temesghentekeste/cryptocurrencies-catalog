@@ -36,6 +36,8 @@ const CruyptoQuote = () => {
   useEffect(async () => {
     const response = await dispatch(getCryptocurrencyQuoteAsync(id));
     setCryptoQuote(await response.payload);
+
+    return () => setCryptoQuote(null);
   }, []);
 
   if (loading) {
