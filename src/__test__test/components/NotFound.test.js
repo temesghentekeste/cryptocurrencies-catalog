@@ -25,3 +25,35 @@ it('renders the NotFound component', () => {
 
   expect(component).toMatchSnapshot();
 });
+
+test('should render NotFound component with correct text', () => {
+  const component = renderer
+    .create(
+      <Router>
+        <NotFound />
+      </Router>
+    )
+    .toJSON();
+
+  const footerEl = getByTestId('not-found');
+
+  expect(footerEl.textContent).not.toBe('© 2021, All Rights Reserved');
+});
+
+test('should render NotFound component with correct text', () => {
+  const component = renderer
+    .create(
+      <Router>
+        <NotFound />
+      </Router>
+    )
+    .toJSON();
+
+  const footerEl = getByTestId('not-found');
+
+  expect(
+    footerEl.textContent.includes(
+      'The page you are trying to view does not exits'
+    )
+  ).toBe(true);
+});
