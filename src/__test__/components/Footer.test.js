@@ -23,5 +23,5 @@ test('should render Footer component with correct text', () => {
 
   const footerEl = getByTestId('footer');
 
-  expect(footerEl.textContent).toBe('© 2021, All Rights Reserved');
+  expect(footerEl.textContent.includes('Temesghen Tekeste')).toBe(true);
 });

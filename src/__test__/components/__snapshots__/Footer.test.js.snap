@@ -6,6 +6,13 @@ exports[`renders the Footer component 1`] = `
   data-testid="footer"
 >
   <p>
+    <a
+      href="https://www.temesghen.me"
+      rel="noreferrer"
+      target="_blank"
+    >
+      Temesghen Tekeste  
+    </a>
     © 2021, All Rights Reserved
   </p>
 </footer>

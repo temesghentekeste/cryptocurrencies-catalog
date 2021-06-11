@@ -5,7 +5,12 @@ import styles from './Footer.module.css';
 
 const Footer = () => (
   <footer className={styles.mainFooter} data-testid="footer">
-    <p>&copy; 2021, All Rights Reserved</p>
+    <p>
+      <a href="https://www.temesghen.me" target="_blank" rel="noreferrer">
+        Temesghen Tekeste &nbsp;
+      </a>
+      &copy; 2021, All Rights Reserved
+    </p>
   </footer>
 );
 

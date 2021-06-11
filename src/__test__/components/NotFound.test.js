@@ -11,7 +11,7 @@ beforeEach(() => {
   const component = render(
     <Router>
       <NotFound />
-    </Router>
+    </Router>,
   );
   getByTestId = component.getByTestId;
 });
@@ -20,7 +20,7 @@ it('renders the NotFound component', () => {
   const component = render(
     <Router>
       <NotFound />
-    </Router>
+    </Router>,
   );
 
   expect(component).toMatchSnapshot();
@@ -31,7 +31,7 @@ test('should render NotFound component with correct text', () => {
     .create(
       <Router>
         <NotFound />
-      </Router>
+      </Router>,
     )
     .toJSON();
 
@@ -45,7 +45,7 @@ test('should render NotFound component with correct text', () => {
     .create(
       <Router>
         <NotFound />
-      </Router>
+      </Router>,
     )
     .toJSON();
 
@@ -53,7 +53,7 @@ test('should render NotFound component with correct text', () => {
 
   expect(
     footerEl.textContent.includes(
-      'The page you are trying to view does not exits'
-    )
+      'The page you are trying to view does not exits',
+    ),
   ).toBe(true);
 });
