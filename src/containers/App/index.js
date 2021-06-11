@@ -18,6 +18,7 @@ import NotFound from '../../components/NotFound';
 import CryptoQuote from '../CryptoQuote';
 import Trending from '../Trending';
 import ErrorAlert from '../../components/Error';
+import Footer from '../../components/Footer';
 
 function App() {
   const [filteredCryptos, setfilteredCryptos] = useState([]);
@@ -79,6 +80,7 @@ function App() {
           </Route>
           <Route path="*" component={NotFound} />
         </Switch>
+        <Footer />
       </Router>
     </div>
   );
