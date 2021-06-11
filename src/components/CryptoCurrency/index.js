@@ -8,7 +8,7 @@ import mainStyle from '../../index.module.css';
 
 const CryptoCurrency = ({ id, symbol, name, price, image }) => (
   <Link to={`/cryptoquote/${id}`}>
-    <div className={styles.cryptoCurrencyCard}>
+    <div className={styles.cryptoCurrencyCard} data-testid="cryptoCurrency">
       <header>
         <p className={mainStyle.badge}>{name}</p>
         <p className={styles.cryptoCurrencyCard__symbol}>{symbol}</p>
