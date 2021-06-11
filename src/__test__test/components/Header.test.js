@@ -35,3 +35,15 @@ it('renders the Header component', () => {
 
   expect(component).toMatchSnapshot();
 });
+
+test('should render Header component with correct cryptocurrencies button text', () => {
+  const headerEl = getByTestId('header');
+
+  expect(headerEl.textContent.includes('Cryptocurrencies')).toBe(true);
+});
+
+test('should render Header component with correct trending coins button text', () => {
+  const headerEl = getByTestId('header');
+
+  expect(headerEl.textContent.includes('Trending')).toBe(true);
+});
