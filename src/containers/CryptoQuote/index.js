@@ -52,12 +52,12 @@ const CruyptoQuote = () => {
   return (
     cryptoQuote && (
       <>
+        <div className={styles.cryptoQuoteTitle}>
+          <img src={cryptoQuote.image.small} alt={cryptoQuote.name} />
+          <h2>{cryptoQuote.name}</h2>
+        </div>
         <div className={styles.cryptoQuote}>
           <div className={styles.cryptoQuote__description}>
-            <div className={styles.cryptoQuote__description__title}>
-              <img src={cryptoQuote.image.small} alt={cryptoQuote.name} />
-              <h2>{cryptoQuote.name}</h2>
-            </div>
             <p>
               <span
                 dangerouslySetInnerHTML={{

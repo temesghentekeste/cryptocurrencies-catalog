@@ -6,7 +6,7 @@ import '@testing-library/jest-dom/extend-expect';
 import CryptoCurrencies from '../../components/CryptoCurrencies';
 
 let getByTestId;
-let cryptocurrencies = [
+const cryptocurrencies = [
   {
     id: 'bitcoin',
     symbol: 'btc',
@@ -74,7 +74,7 @@ beforeEach(() => {
   const component = render(
     <Router>
       <CryptoCurrencies cryptoCurrencies={cryptocurrencies} />
-    </Router>
+    </Router>,
   );
   getByTestId = component.getByTestId;
 });
@@ -84,7 +84,7 @@ it('renders the CryptoCurrencies component', () => {
     .create(
       <Router>
         <CryptoCurrencies cryptoCurrencies={cryptocurrencies} />
-      </Router>
+      </Router>,
     )
     .toJSON();
 

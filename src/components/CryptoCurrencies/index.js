@@ -9,9 +9,11 @@ const CryptoCurrencies = ({ cryptoCurrencies }) => (
     className={styles.availableCryptocurrencies}
     data-testid="cryptocurrencies"
   >
-    {cryptoCurrencies &&
-      cryptoCurrencies.map((crypto) => {
-        const { id, symbol, name, current_price: price, image } = crypto;
+    {cryptoCurrencies
+      && cryptoCurrencies.map((crypto) => {
+        const {
+          id, symbol, name, current_price: price, image,
+        } = crypto;
         return (
           <CryptoCurrency
             key={id}

@@ -1,3 +1,15 @@
+.cryptoQuoteTitle {
+  display: flex;
+  align-items: center;
+}
+
+.cryptoQuoteTitle h2 {
+  margin-left: 1rem;
+  color: #f79427;
+  font-weight: 700;
+  font-size: 2.4rem;
+}
+
 .cryptoQuote {
   margin: 2rem 0;
   display: flex;
@@ -15,19 +27,9 @@
   border-right: 4px solid orange;
 }
 
-.cryptoQuote__description__title {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.8rem;
-}
-
 .cryptoQuote__description a {
   color: orange;
   font-weight: 700;
-}
-
-.cryptoQuote__description__title h2 {
-  margin-left: 1rem;
 }
 
 .cryptoQuote__Card {
@@ -97,6 +99,12 @@
   justify-content: space-between;
   flex-wrap: wrap;
   font-size: 0.85rem;
+}
+
+@media screen and (max-width: 854px) {
+  .cryptoQuote__Card {
+    flex: 1;
+  }
 }
 
 @media screen and (max-width: 768px) {
