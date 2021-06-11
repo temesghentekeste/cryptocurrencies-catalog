@@ -2,6 +2,7 @@
 /* eslint-disable comma-dangle */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-danger */
+/* eslint-disable import/no-useless-path-segments */
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -20,7 +21,7 @@ import { getCryptocurrencyQuoteAsync } from '../../redux/cryptoQuotesSlice';
 
 import styles from './CryptoQuote.module.css';
 import mainStyles from '../../index.module.css';
-import ErrorAlert from '../../components/Error';
+import ErrorAlert from '../../components/Error/';
 
 const CruyptoQuote = () => {
   const [cryptoQuote, setCryptoQuote] = useState(null);
