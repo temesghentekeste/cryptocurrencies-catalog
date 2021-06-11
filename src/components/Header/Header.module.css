@@ -45,18 +45,21 @@
   border: none;
 }
 
-.header button {
+.header .btnSubmit {
   padding: 0.5rem 0.85rem;
-  border-radius: 0.4rem;
   margin: 0.5rem;
+  background: #8f5c84;
+  color: #fff;
+  border-radius: 0.4rem;
 }
 
-.header button:hover {
+.header .btnSubmit:hover {
   cursor: pointer;
 }
 
 .header__right h1:hover,
-.header__right h3:hover {
+.header__right h3:hover,
+.header .btnSubmit:hover {
   background: #7a306a;
 }
 

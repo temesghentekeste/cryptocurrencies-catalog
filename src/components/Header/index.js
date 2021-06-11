@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -8,11 +8,17 @@ const Header = ({ handleFilter }) => {
   const [keyword, setKeyword] = useState('');
   const history = useHistory();
 
+  useEffect(() => {
+    handleFilter(keyword);
+    history.push('/');
+  }, [keyword]);
+
   const handleChange = (e) => {
     setKeyword(e.target.value);
   };
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
     handleFilter(keyword);
     history.push('/');
   };
@@ -31,13 +37,14 @@ const Header = ({ handleFilter }) => {
       <div className={styles.header__search}>
         <input
           type="text"
+          name="keyword"
           placeholder="Search for something. Ex. iExec, Bitcoin, DOGEUSD..."
           value={keyword}
           onChange={(e) => handleChange(e)}
         />
-        <button type="button" onClick={handleClick}>
-          Search
-        </button>
+        <form onSubmit={handleClick}>
+          <input type="submit" value="Search" className={styles.btnSubmit} />
+        </form>
       </div>
     </header>
   );
