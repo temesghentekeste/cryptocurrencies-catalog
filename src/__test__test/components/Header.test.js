@@ -10,11 +10,7 @@ let getByTestId;
 beforeEach(() => {
   const component = render(
     <Router>
-      <Header
-        handleFilter={() => {
-          console.log('testing...');
-        }}
-      />
+      <Header handleFilter={() => 'Header'} />
     </Router>
   );
   getByTestId = component.getByTestId;
@@ -24,11 +20,7 @@ it('renders the Header component', () => {
   const component = renderer
     .create(
       <Router>
-        <Header
-          handleFilter={() => {
-            console.log('testing...');
-          }}
-        />
+        <Header handleFilter={() => 'Header'} />
       </Router>
     )
     .toJSON();

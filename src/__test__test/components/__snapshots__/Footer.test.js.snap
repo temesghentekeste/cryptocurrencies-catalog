@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the Footer component 1`] = `
+<footer
+  className="mainFooter"
+  data-testid="header"
+>
+  <p>
+    © 2021, All Rights Reserved
+  </p>
+</footer>
+`;
