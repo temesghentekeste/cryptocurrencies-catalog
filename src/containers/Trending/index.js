@@ -1,7 +1,6 @@
 /* eslint-disable comma-dangle */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
-/* eslint-disable import/no-useless-path-segments */
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable operator-linebreak
  */
@@ -20,7 +19,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getTrendingCryptosAsync } from '../../redux/trendingSlice';
 import styles from './Trending.module.css';
 import mainStyles from '../../index.module.css';
-import ErrorAlert from '../../components/Error/';
+import ErrorAlert from '../../components/Error';
 
 const useStyles = makeStyles({
   table: {

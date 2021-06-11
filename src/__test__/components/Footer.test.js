@@ -1,5 +1,4 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
@@ -19,8 +18,6 @@ it('renders the Footer component', () => {
 });
 
 test('should render Footer component with correct text', () => {
-  const component = renderer.create(<Footer />).toJSON();
-
   const footerEl = getByTestId('footer');
 
   expect(footerEl.textContent.includes('Temesghen Tekeste')).toBe(true);

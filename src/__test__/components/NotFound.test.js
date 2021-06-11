@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import renderer from 'react-test-renderer';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import NotFound from '../../components/NotFound';
@@ -27,28 +26,12 @@ it('renders the NotFound component', () => {
 });
 
 test('should render NotFound component with correct text', () => {
-  const component = renderer
-    .create(
-      <Router>
-        <NotFound />
-      </Router>,
-    )
-    .toJSON();
-
   const footerEl = getByTestId('not-found');
 
   expect(footerEl.textContent).not.toBe('© 2021, All Rights Reserved');
 });
 
 test('should render NotFound component with correct text', () => {
-  const component = renderer
-    .create(
-      <Router>
-        <NotFound />
-      </Router>,
-    )
-    .toJSON();
-
   const footerEl = getByTestId('not-found');
 
   expect(

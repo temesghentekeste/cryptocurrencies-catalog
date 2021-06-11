@@ -1,11 +1,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import CryptoCurrencies from '../../components/CryptoCurrencies';
 
-let getByTestId;
 const cryptocurrencies = [
   {
     id: 'bitcoin',
@@ -70,14 +68,6 @@ const cryptocurrencies = [
     last_updated: '2021-06-11T19:10:25.798Z',
   },
 ];
-beforeEach(() => {
-  const component = render(
-    <Router>
-      <CryptoCurrencies cryptoCurrencies={cryptocurrencies} />
-    </Router>,
-  );
-  getByTestId = component.getByTestId;
-});
 
 it('renders the CryptoCurrencies component', () => {
   const component = renderer

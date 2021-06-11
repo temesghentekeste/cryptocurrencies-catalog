@@ -1,9 +1,8 @@
-/* eslint-disable import/no-useless-path-segments */
 /* eslint-disable react/forbid-prop-types */
 /* eslint-disable operator-linebreak */
 /* eslint-disable object-curly-newline */
 import PropTypes from 'prop-types';
-import CryptoCurrency from '../CryptoCurrency/';
+import CryptoCurrency from '../CryptoCurrency';
 import styles from './CryptoCurrencies.module.css';
 
 const CryptoCurrencies = ({ cryptoCurrencies }) => (

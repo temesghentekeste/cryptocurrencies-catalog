@@ -1,4 +1,3 @@
-/* eslint-disable import/no-useless-path-segments */
 /* eslint-disable implicit-arrow-linebreak */
 /* eslint-disable comma-dangle */
 /* eslint-disable operator-linebreak */
@@ -8,17 +7,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { WaveLoading } from 'react-loadingg';
 
 import styles from './App.module.css';
-import CryptoCurrencies from '../../components/CryptoCurrencies/';
+import CryptoCurrencies from '../../components/CryptoCurrencies';
 import {
   filterCryptocurrencies,
   getCryptocurrenciesAsync,
 } from '../../redux/cryptocurrenciesSlice';
-import Header from '../../components/Header/';
-import NotFound from '../../components/NotFound/';
-import CryptoQuote from '../CryptoQuote/';
-import Trending from '../Trending/';
-import ErrorAlert from '../../components/Error/';
-import Footer from '../../components/Footer/';
+import Header from '../../components/Header';
+import NotFound from '../../components/NotFound';
+import CryptoQuote from '../CryptoQuote';
+import Trending from '../Trending';
+import ErrorAlert from '../../components/Error';
+import Footer from '../../components/Footer';
 
 function App() {
   const [filteredCryptos, setfilteredCryptos] = useState([]);
