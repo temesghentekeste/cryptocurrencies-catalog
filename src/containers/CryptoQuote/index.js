@@ -84,9 +84,11 @@ const CruyptoQuote = () => {
               </div>
 
               <div className={styles.cryptoQuote__stats__price}>
-                <p>
-                  Genesis Date: <span>{cryptoQuote.genesis_date}</span>
-                </p>
+                {cryptoQuote.genesis_date && (
+                  <p>
+                    Genesis Date: <span>{cryptoQuote.genesis_date}</span>
+                  </p>
+                )}
 
                 <p>
                   Market Cap:{' '}
