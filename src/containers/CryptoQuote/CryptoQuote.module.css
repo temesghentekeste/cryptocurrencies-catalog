@@ -98,3 +98,14 @@
   flex-wrap: wrap;
   font-size: 0.85rem;
 }
+
+@media screen and (max-width: 600px) {
+  .cryptoQuote {
+    flex-direction: column;
+  }
+
+  .cryptoQuote__description {
+    order: 1;
+    border-right: none;
+  }
+}

@@ -55,6 +55,5 @@
 @media screen and (max-width: 768px) {
   .cryptoCurrencyCard {
     width: 100%;
-    flex: 1;
   }
 }
