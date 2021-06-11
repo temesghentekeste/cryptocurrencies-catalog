@@ -2,23 +2,26 @@
 
 exports[`renders the CryptoCurrency component 1`] = `
 <a
-  href="/cryptoquote/BitCoin"
+  href="/cryptoquote/Bitcoin"
   onClick={[Function]}
 >
   <div
     className="cryptoCurrencyCard"
-    data-testid="cryptoCurrency"
+    data-testid="cryptocurrency"
   >
-    <header>
+    <header
+      data-testid="cryptocurrency-header"
+    >
       <p
         className="badge"
+        data-testid="cryptocurrency-name"
       >
-        BitCoin
+        Bitcoin
       </p>
       <p
         className="cryptoCurrencyCard__symbol"
       >
-        BitCoin
+        Bitcoin
       </p>
     </header>
     <div
@@ -29,7 +32,7 @@ exports[`renders the CryptoCurrency component 1`] = `
         1.25
       </span>
       <img
-        alt="BitCoin"
+        alt="Bitcoin"
         src="https://ichef.bbci.co.uk/news/976/cpsprodpb/6127/production/_117317842_065760657.jpg"
       />
     </div>
@@ -42,52 +45,4 @@ exports[`renders the CryptoCurrency component 1`] = `
     </footer>
   </div>
 </a>
-`;
-
-exports[`renders the Header component 1`] = `
-<header
-  className="header"
-  data-testid="header"
->
-  <div
-    className="header__right"
-  >
-    <a
-      href="/"
-      onClick={[Function]}
-    >
-      <h1>
-        Cryptocurrencies
-      </h1>
-    </a>
-    <a
-      href="/trending"
-      onClick={[Function]}
-    >
-      <h3>
-        Trending Dashboard
-      </h3>
-    </a>
-  </div>
-  <div
-    className="header__search"
-  >
-    <input
-      name="keyword"
-      onChange={[Function]}
-      placeholder="Search for something. Ex. iExec, Bitcoin, DOGEUSD..."
-      type="text"
-      value=""
-    />
-    <form
-      onSubmit={[Function]}
-    >
-      <input
-        className="btnSubmit"
-        type="submit"
-        value="Search"
-      />
-    </form>
-  </div>
-</header>
 `;
