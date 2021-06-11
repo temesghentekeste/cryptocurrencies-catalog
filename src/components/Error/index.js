@@ -15,7 +15,7 @@ export default function ErrorAlert() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} data-testid="error">
       <Alert severity="error">Something went wrong. Please try again!</Alert>
     </div>
   );
