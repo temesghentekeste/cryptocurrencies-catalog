@@ -5,8 +5,11 @@
   text-align: center;
   color: #fff;
 }
-
 .mainFooter a {
+  transition: ease-in-out 0.3s;
+}
+
+.mainFooter a:hover {
   color: #f79427;
 }
 

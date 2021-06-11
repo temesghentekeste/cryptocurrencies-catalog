@@ -11,9 +11,9 @@ exports[`renders the Footer component 1`] = `
       rel="noreferrer"
       target="_blank"
     >
-      Temesghen Tekeste  
+      ©Temesghen Tekeste  
     </a>
-    © 2021, All Rights Reserved
+    2021, All Rights Reserved
   </p>
 </footer>
 `;
