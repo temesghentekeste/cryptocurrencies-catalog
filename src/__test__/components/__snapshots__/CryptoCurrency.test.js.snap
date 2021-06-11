@@ -20,16 +20,19 @@ exports[`renders the CryptoCurrency component 1`] = `
       </p>
       <p
         className="cryptoCurrencyCard__symbol"
+        data-testid="cryptocurrency-symbol"
       >
-        Bitcoin
+        btc
       </p>
     </header>
     <div
       className="cryptoCurrencyCard__body"
     >
-      <span>
+      <span
+        data-testid="cryptocurrency-price"
+      >
         Price: $
-        1.25
+        37255
       </span>
       <img
         alt="Bitcoin"

@@ -13,11 +13,16 @@ const CryptoCurrency = ({ id, symbol, name, price, image }) => (
         <p className={mainStyle.badge} data-testid="cryptocurrency-name">
           {name}
         </p>
-        <p className={styles.cryptoCurrencyCard__symbol}>{symbol}</p>
+        <p
+          className={styles.cryptoCurrencyCard__symbol}
+          data-testid="cryptocurrency-symbol"
+        >
+          {symbol}
+        </p>
       </header>
 
       <div className={styles.cryptoCurrencyCard__body}>
-        <span>Price: ${price}</span>
+        <span data-testid="cryptocurrency-price">Price: ${price}</span>
         <img src={image} alt={name} />
       </div>
 

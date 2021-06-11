@@ -11,10 +11,10 @@ beforeEach(() => {
   const component = render(
     <Router>
       <CryptoCurrency
-        id={'BitCoin'}
-        symbol="BitCoin"
-        name="BitCoin"
-        price={1.25}
+        id={'Bitcoin'}
+        symbol="btc"
+        name="Bitcoin"
+        price={37255}
         image="https://ichef.bbci.co.uk/news/976/cpsprodpb/6127/production/_117317842_065760657.jpg"
       />
     </Router>
@@ -28,9 +28,9 @@ it('renders the CryptoCurrency component', () => {
       <Router>
         <CryptoCurrency
           id={'Bitcoin'}
-          symbol="Bitcoin"
+          symbol="btc"
           name="Bitcoin"
-          price={1.25}
+          price={37255}
           image="https://ichef.bbci.co.uk/news/976/cpsprodpb/6127/production/_117317842_065760657.jpg"
         />
       </Router>
@@ -43,11 +43,35 @@ it('renders the CryptoCurrency component', () => {
 test('should render CryptoCurrency component with correct name', () => {
   const cryptoCurrencyEl = getByTestId('cryptocurrency-name');
 
-  expect(cryptoCurrencyEl).toHaveTextContent('BitCoin');
+  expect(cryptoCurrencyEl).toHaveTextContent('Bitcoin');
 });
 
 test('should render CryptoCurrency component with correct name', () => {
   const cryptoCurrencyEl = getByTestId('cryptocurrency-name');
 
-  expect(cryptoCurrencyEl).not.toHaveTextContent('Ethereum');
+  expect(cryptoCurrencyEl).not.toHaveTextContent('eth');
+});
+
+test('should render CryptoCurrency component with correct price', () => {
+  const cryptoCurrencyEl = getByTestId('cryptocurrency-price');
+
+  expect(cryptoCurrencyEl).toHaveTextContent('$37255');
+});
+
+test('should render CryptoCurrency component with correct symbol', () => {
+  const cryptoCurrencyEl = getByTestId('cryptocurrency-symbol');
+
+  expect(cryptoCurrencyEl).not.toHaveTextContent('0');
+});
+
+test('should render CryptoCurrency component with correct symbol', () => {
+  const cryptoCurrencyEl = getByTestId('cryptocurrency-symbol');
+
+  expect(cryptoCurrencyEl).toHaveTextContent('btc');
+});
+
+test('should render CryptoCurrency component with correct symbol', () => {
+  const cryptoCurrencyEl = getByTestId('cryptocurrency-symbol');
+
+  expect(cryptoCurrencyEl).not.toHaveTextContent('eth');
 });
