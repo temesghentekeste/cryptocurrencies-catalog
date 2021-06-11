@@ -24,7 +24,7 @@ const Header = ({ handleFilter }) => {
   };
 
   return (
-    <header className={styles.header}>
+    <header className={styles.header} data-testid="header">
       <div className={styles.header__right}>
         <Link to="/">
           <h1>Cryptocurrencies</h1>

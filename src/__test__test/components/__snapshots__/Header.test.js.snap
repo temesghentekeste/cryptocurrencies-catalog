@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the Header component 1`] = `
+<header
+  className="header"
+  data-testid="header"
+>
+  <div
+    className="header__right"
+  >
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      <h1>
+        Cryptocurrencies
+      </h1>
+    </a>
+    <a
+      href="/trending"
+      onClick={[Function]}
+    >
+      <h3>
+        Trending Dashboard
+      </h3>
+    </a>
+  </div>
+  <div
+    className="header__search"
+  >
+    <input
+      name="keyword"
+      onChange={[Function]}
+      placeholder="Search for something. Ex. iExec, Bitcoin, DOGEUSD..."
+      type="text"
+      value=""
+    />
+    <form
+      onSubmit={[Function]}
+    >
+      <input
+        className="btnSubmit"
+        type="submit"
+        value="Search"
+      />
+    </form>
+  </div>
+</header>
+`;
