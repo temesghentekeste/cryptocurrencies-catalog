@@ -5,12 +5,13 @@ import CryptoCurrency from '../CryptoCurrency';
 import styles from './CryptoCurrencies.module.css';
 
 const CryptoCurrencies = ({ cryptoCurrencies }) => (
-  <div className={styles.availableCryptocurrencies}>
-    {cryptoCurrencies
-      && cryptoCurrencies.map((crypto) => {
-        const {
-          id, symbol, name, current_price: price, image,
-        } = crypto;
+  <div
+    className={styles.availableCryptocurrencies}
+    data-testid="cryptocurrencies"
+  >
+    {cryptoCurrencies &&
+      cryptoCurrencies.map((crypto) => {
+        const { id, symbol, name, current_price: price, image } = crypto;
         return (
           <CryptoCurrency
             key={id}

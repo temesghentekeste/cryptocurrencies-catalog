@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the CryptoCurrencies component 1`] = `
+<div
+  className="availableCryptocurrencies"
+  data-testid="cryptocurrencies"
+>
+  <a
+    href="/cryptoquote/bitcoin"
+    onClick={[Function]}
+  >
+    <div
+      className="cryptoCurrencyCard"
+      data-testid="cryptocurrency"
+    >
+      <header
+        data-testid="cryptocurrency-header"
+      >
+        <p
+          className="badge"
+          data-testid="cryptocurrency-name"
+        >
+          Bitcoin
+        </p>
+        <p
+          className="cryptoCurrencyCard__symbol"
+          data-testid="cryptocurrency-symbol"
+        >
+          btc
+        </p>
+      </header>
+      <div
+        className="cryptoCurrencyCard__body"
+      >
+        <span
+          data-testid="cryptocurrency-price"
+        >
+          Price: $
+          37228
+        </span>
+        <img
+          alt="Bitcoin"
+          src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579"
+        />
+      </div>
+      <footer>
+        <button
+          type="button"
+        >
+          More...
+        </button>
+      </footer>
+    </div>
+  </a>
+  <a
+    href="/cryptoquote/ethereum"
+    onClick={[Function]}
+  >
+    <div
+      className="cryptoCurrencyCard"
+      data-testid="cryptocurrency"
+    >
+      <header
+        data-testid="cryptocurrency-header"
+      >
+        <p
+          className="badge"
+          data-testid="cryptocurrency-name"
+        >
+          Ethereum
+        </p>
+        <p
+          className="cryptoCurrencyCard__symbol"
+          data-testid="cryptocurrency-symbol"
+        >
+          eth
+        </p>
+      </header>
+      <div
+        className="cryptoCurrencyCard__body"
+      >
+        <span
+          data-testid="cryptocurrency-price"
+        >
+          Price: $
+          2421.79
+        </span>
+        <img
+          alt="Ethereum"
+          src="https://assets.coingecko.com/coins/images/279/large/ethereum.png?1595348880"
+        />
+      </div>
+      <footer>
+        <button
+          type="button"
+        >
+          More...
+        </button>
+      </footer>
+    </div>
+  </a>
+</div>
+`;
