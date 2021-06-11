@@ -3,7 +3,7 @@
 exports[`renders the Footer component 1`] = `
 <footer
   className="mainFooter"
-  data-testid="header"
+  data-testid="footer"
 >
   <p>
     © 2021, All Rights Reserved

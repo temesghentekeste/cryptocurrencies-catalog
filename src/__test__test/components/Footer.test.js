@@ -17,3 +17,11 @@ it('renders the Footer component', () => {
 
   expect(component).toMatchSnapshot();
 });
+
+test('should render Footer component with correct text', () => {
+  const component = renderer.create(<Footer />).toJSON();
+
+  const footerEl = getByTestId('footer');
+
+  expect(footerEl.textContent).toBe('© 2021, All Rights Reserved');
+});
