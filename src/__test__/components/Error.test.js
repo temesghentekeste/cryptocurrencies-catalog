@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import Error from '../../components/Error';
+import Error from '../../components/Error/Error';
 
 let getByTestId;
 

@@ -3,7 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import CryptoCurrency from '../../components/CryptoCurrency';
+import CryptoCurrency from '../../components/CryptoCurrency/CryptoCurrency';
 
 let getByTestId;
 
@@ -17,7 +17,7 @@ beforeEach(() => {
         price={37255}
         image="https://ichef.bbci.co.uk/news/976/cpsprodpb/6127/production/_117317842_065760657.jpg"
       />
-    </Router>,
+    </Router>
   );
   getByTestId = component.getByTestId;
 });
@@ -33,7 +33,7 @@ it('renders the CryptoCurrency component', () => {
           price={37255}
           image="https://ichef.bbci.co.uk/news/976/cpsprodpb/6127/production/_117317842_065760657.jpg"
         />
-      </Router>,
+      </Router>
     )
     .toJSON();
 

@@ -5,20 +5,18 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { WaveLoading } from 'react-loadingg';
 
 import styles from './App.module.css';
-import CryptoCurrencies from '../../components/CryptoCurrencies';
 import {
   filterCryptocurrencies,
   getCryptocurrenciesAsync,
 } from '../../redux/cryptocurrenciesSlice';
-import Header from '../../components/Header';
-import NotFound from '../../components/NotFound';
-import CryptoQuote from '../CryptoQuote';
-import Trending from '../Trending';
-import ErrorAlert from '../../components/Error';
-import Footer from '../../components/Footer';
+import Header from '../../components/Header/Header';
+import NotFound from '../../components/NotFound/NotFound';
+import Trending from '../Trending/Trending';
+import Footer from '../../components/Footer/Footer';
+import CryptoCurrencies from '../../components/CryptoCurrencies/CryptoCurrencies';
+import CryptoQuote from '../CryptoQuote/CryptoQuote';
 
 function App() {
   const [filteredCryptos, setfilteredCryptos] = useState([]);
@@ -54,14 +52,6 @@ function App() {
   // useEffect(() => {
   //   setfilteredCryptos(cryptoCurrencies);
   // }, [dispatch, filterCryptocurrencies]);
-
-  if (loading) {
-    return <WaveLoading />;
-  }
-
-  if (filteredCryptos && filteredCryptos.error) {
-    return <ErrorAlert />;
-  }
 
   return (
     <div className={styles.app}>

@@ -19,7 +19,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getTrendingCryptosAsync } from '../../redux/trendingSlice';
 import styles from './Trending.module.css';
 import mainStyles from '../../index.module.css';
-import ErrorAlert from '../../components/Error';
+import ErrorAlert from '../../components/Error/Error';
 
 const useStyles = makeStyles({
   table: {

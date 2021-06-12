@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { BrowserRouter as Router } from 'react-router-dom';
 import '@testing-library/jest-dom/extend-expect';
-import CryptoCurrencies from '../../components/CryptoCurrencies';
+import CryptoCurrencies from '../../components/CryptoCurrencies/CryptoCurrencies';
 
 const cryptocurrencies = [
   {
@@ -74,7 +74,7 @@ it('renders the CryptoCurrencies component', () => {
     .create(
       <Router>
         <CryptoCurrencies cryptoCurrencies={cryptocurrencies} />
-      </Router>,
+      </Router>
     )
     .toJSON();
 
