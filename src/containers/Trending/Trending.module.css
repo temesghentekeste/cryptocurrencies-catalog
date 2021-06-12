@@ -1,6 +1,7 @@
 .trending {
   margin: 1rem 0;
 }
+
 .trending__name {
   display: flex;
   align-items: center;
