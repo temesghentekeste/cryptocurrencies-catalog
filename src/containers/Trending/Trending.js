@@ -28,10 +28,10 @@ const useStyles = makeStyles({
 });
 
 const Trending = () => {
-  const [trending, setTrending] = useState(null);
+  // const [trending, setTrending] = useState(null);
   const dispatch = useDispatch();
 
-  const trendingCryptoCurrencies = useSelector(
+  const trending = useSelector(
     (state) => state.trendingcryptocurrencies.trending
   );
 
@@ -39,14 +39,17 @@ const Trending = () => {
     (state) => state.trendingcryptocurrencies.loading
   );
 
-  useEffect(async () => {
-    const response = await dispatch(getTrendingCryptosAsync());
-    setTrending(await response.payload);
+  // useEffect(async () => {
+  //   const response = await dispatch(getTrendingCryptosAsync());
+  //   setTrending(await response.payload);
+  // }, []);
 
-    return () => setTrending(null);
-  }, []);
+  useEffect(() => {
+    dispatch(getTrendingCryptosAsync());
+  }, [dispatch]);
 
   const classes = useStyles();
+  console.log(loading);
 
   if (loading) {
     return <WaveLoading />;

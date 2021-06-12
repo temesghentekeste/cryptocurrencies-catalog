@@ -11,7 +11,7 @@ import styles from './CryptoCurrencies.module.css';
 
 const CryptoCurrencies = ({ cryptoCurrencies, loading }) => {
   console.log(loading);
-  if (loading || loading === null) {
+  if (loading || loading === null || loading === undefined) {
     return <WaveLoading />;
   }
 
