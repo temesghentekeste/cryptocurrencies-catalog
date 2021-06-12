@@ -1,6 +1,7 @@
 /* eslint-disable implicit-arrow-linebreak */
 /* eslint-disable comma-dangle */
 /* eslint-disable operator-linebreak */
+/* eslint-disable no-unused-vars */
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -50,9 +51,9 @@ function App() {
     setfilteredCryptos(await response.payload);
   }, []);
 
-  useEffect(() => {
-    setfilteredCryptos(cryptoCurrencies);
-  }, [dispatch, filterCryptocurrencies]);
+  // useEffect(() => {
+  //   setfilteredCryptos(cryptoCurrencies);
+  // }, [dispatch, filterCryptocurrencies]);
 
   if (loading) {
     return <WaveLoading />;
