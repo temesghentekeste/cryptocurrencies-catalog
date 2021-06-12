@@ -59,7 +59,10 @@ function App() {
         <Header handleFilter={handleFilter} />
         <Switch>
           <Route path="/" exact>
-            <CryptoCurrencies cryptoCurrencies={filteredCryptos} />
+            <CryptoCurrencies
+              cryptoCurrencies={filteredCryptos}
+              loading={loading}
+            />
           </Route>
           <Route path="/cryptoquote/:id">
             <CryptoQuote />
