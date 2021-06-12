@@ -3,7 +3,7 @@
 /* eslint-disable object-curly-newline */
 /* eslint-disable  react/require-default-props */
 import PropTypes from 'prop-types';
-import { WaveLoading } from 'react-loadingg';
+// import { WaveLoading } from 'react-loadingg';
 import ErrorAlert from '../Error/Error';
 
 import CryptoCurrency from '../CryptoCurrency/CryptoCurrency';
@@ -12,7 +12,7 @@ import styles from './CryptoCurrencies.module.css';
 const CryptoCurrencies = ({ cryptoCurrencies, loading }) => {
   console.log(loading);
   if (loading || loading === null || loading === undefined) {
-    return <WaveLoading />;
+    return <h2>Loading</h2>;
   }
 
   if (cryptoCurrencies && cryptoCurrencies.error) {

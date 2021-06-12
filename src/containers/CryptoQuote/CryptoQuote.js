@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { WaveLoading } from 'react-loadingg';
+// import { WaveLoading } from 'react-loadingg/lib';
 
 import {
   faFacebook,
@@ -46,7 +46,7 @@ const CruyptoQuote = () => {
   }, [dispatch]);
 
   if (loading || loading === null) {
-    return <WaveLoading />;
+    return <h2>Loading</h2>;
   }
 
   if (cryptoQuote && cryptoQuote.error) {

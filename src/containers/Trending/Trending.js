@@ -4,10 +4,10 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable operator-linebreak
  */
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import { WaveLoading } from 'react-loadingg';
+// import { WaveLoading } from 'react-loadingg/lib';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -52,7 +52,7 @@ const Trending = () => {
   console.log(loading);
 
   if (loading) {
-    return <WaveLoading />;
+    return <h2>Loading</h2>;
   }
 
   if (trending && trending.error) {
