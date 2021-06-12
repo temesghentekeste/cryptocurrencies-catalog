@@ -23,23 +23,27 @@ import mainStyles from '../../index.module.css';
 import ErrorAlert from '../../components/Error/Error';
 
 const CruyptoQuote = () => {
-  const [cryptoQuote, setCryptoQuote] = useState(null);
+  // const [cryptoQuote, setCryptoQuote] = useState(null);
   const { window } = new JSDOM('');
   const DOMPurify = createDOMPurify(window);
   const { id } = useParams();
   const dispatch = useDispatch();
 
-  const cryptoQuote2 = useSelector(
+  const cryptoQuote = useSelector(
     (state) => state.cryptocurrencyquote.cryptoQuote
   );
   const loading = useSelector((state) => state.cryptocurrencyquote.loading);
 
-  useEffect(async () => {
-    const response = await dispatch(getCryptocurrencyQuoteAsync(id));
-    setCryptoQuote(await response.payload);
+  // useEffect(async () => {
+  //   const response = await dispatch(getCryptocurrencyQuoteAsync(id));
+  //   setCryptoQuote(await response.payload);
 
-    return () => setCryptoQuote(null);
-  }, []);
+  //   return () => setCryptoQuote(null);
+  // }, []);
+
+  useEffect(() => {
+    dispatch(getCryptocurrencyQuoteAsync(id));
+  }, [dispatch]);
 
   if (loading || loading === null) {
     return <WaveLoading />;

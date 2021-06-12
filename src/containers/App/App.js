@@ -49,6 +49,10 @@ function App() {
     setfilteredCryptos(await response.payload);
   }, []);
 
+  useEffect(() => {
+    dispatch(getCryptocurrenciesAsync());
+  }, [dispatch]);
+
   return (
     <div className={styles.app}>
       <Router>
