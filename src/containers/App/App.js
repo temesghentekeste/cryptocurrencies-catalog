@@ -49,10 +49,6 @@ function App() {
     setfilteredCryptos(await response.payload);
   }, []);
 
-  // useEffect(() => {
-  //   setfilteredCryptos(cryptoCurrencies);
-  // }, [dispatch, filterCryptocurrencies]);
-
   return (
     <div className={styles.app}>
       <Router>

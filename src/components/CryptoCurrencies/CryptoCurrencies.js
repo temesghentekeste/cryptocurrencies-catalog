@@ -1,6 +1,7 @@
 /* eslint-disable react/forbid-prop-types */
 /* eslint-disable operator-linebreak */
 /* eslint-disable object-curly-newline */
+/* eslint-disable  react/require-default-props */
 import PropTypes from 'prop-types';
 import { WaveLoading } from 'react-loadingg';
 import ErrorAlert from '../Error/Error';
@@ -9,6 +10,7 @@ import CryptoCurrency from '../CryptoCurrency/CryptoCurrency';
 import styles from './CryptoCurrencies.module.css';
 
 const CryptoCurrencies = ({ cryptoCurrencies, loading }) => {
+  console.log(loading);
   if (loading) {
     return <WaveLoading />;
   }
@@ -41,7 +43,7 @@ const CryptoCurrencies = ({ cryptoCurrencies, loading }) => {
 
 CryptoCurrencies.propTypes = {
   cryptoCurrencies: PropTypes.array.isRequired,
-  loading: PropTypes.string.isRequired,
+  loading: PropTypes.string,
 };
 
 export default CryptoCurrencies;
