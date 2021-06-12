@@ -41,7 +41,7 @@ const CruyptoQuote = () => {
     return () => setCryptoQuote(null);
   }, []);
 
-  if (loading) {
+  if (loading || loading === null) {
     return <WaveLoading />;
   }
 

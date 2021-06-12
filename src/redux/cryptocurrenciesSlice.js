@@ -6,7 +6,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { allCryptosURL } from '../APIEndPoints';
 
 const initialState = {
-  loading: null,
+  loading: false,
   cryptoCurrencies: [],
 };
 
@@ -30,11 +30,11 @@ const cryptocurrenciesSlice = createSlice({
   },
   extraReducers: {
     [getCryptocurrenciesAsync.pending]: (state, action) => {
-      state.loading = 'loading';
+      state.loading = true;
       state.cryptoCurrencies = [];
     },
     [getCryptocurrenciesAsync.fulfilled]: (state, action) => {
-      state.loading = null;
+      state.loading = false;
       state.cryptoCurrencies = action.payload;
     },
   },

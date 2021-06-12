@@ -74,7 +74,7 @@ it('renders the CryptoCurrencies component', () => {
     .create(
       <Router>
         <CryptoCurrencies cryptoCurrencies={cryptocurrencies} />
-      </Router>
+      </Router>,
     )
     .toJSON();
 

@@ -11,7 +11,7 @@ import styles from './CryptoCurrencies.module.css';
 
 const CryptoCurrencies = ({ cryptoCurrencies, loading }) => {
   console.log(loading);
-  if (loading) {
+  if (loading || loading === null) {
     return <WaveLoading />;
   }
 
@@ -43,7 +43,7 @@ const CryptoCurrencies = ({ cryptoCurrencies, loading }) => {
 
 CryptoCurrencies.propTypes = {
   cryptoCurrencies: PropTypes.array.isRequired,
-  loading: PropTypes.string,
+  loading: PropTypes.bool,
 };
 
 export default CryptoCurrencies;

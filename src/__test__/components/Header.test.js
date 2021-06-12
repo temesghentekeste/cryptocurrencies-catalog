@@ -11,7 +11,7 @@ beforeEach(() => {
   const component = render(
     <Router>
       <Header handleFilter={() => 'Header'} />
-    </Router>
+    </Router>,
   );
   getByTestId = component.getByTestId;
 });
@@ -21,7 +21,7 @@ it('renders the Header component', () => {
     .create(
       <Router>
         <Header handleFilter={() => 'Header'} />
-      </Router>
+      </Router>,
     )
     .toJSON();
 

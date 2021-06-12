@@ -17,7 +17,7 @@ beforeEach(() => {
         price={37255}
         image="https://ichef.bbci.co.uk/news/976/cpsprodpb/6127/production/_117317842_065760657.jpg"
       />
-    </Router>
+    </Router>,
   );
   getByTestId = component.getByTestId;
 });
@@ -33,7 +33,7 @@ it('renders the CryptoCurrency component', () => {
           price={37255}
           image="https://ichef.bbci.co.uk/news/976/cpsprodpb/6127/production/_117317842_065760657.jpg"
         />
-      </Router>
+      </Router>,
     )
     .toJSON();
 

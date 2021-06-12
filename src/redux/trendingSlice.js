@@ -6,7 +6,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { trendingCryptosURL } from '../APIEndPoints';
 
 const initialState = {
-  loading: null,
+  loading: true,
   trending: [],
 };
 
@@ -25,11 +25,11 @@ const trendingSlice = createSlice({
 
   extraReducers: {
     [getTrendingCryptosAsync.pending]: (state, action) => {
-      state.loading = 'loading';
+      state.loading = true;
     },
 
     [getTrendingCryptosAsync.fulfilled]: (state, action) => {
-      state.loading = null;
+      state.loading = false;
       state.trending = action.payload;
     },
   },
