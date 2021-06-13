@@ -2,6 +2,7 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable comma-dangle */
 
+import axios from 'axios';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { allCryptosURL } from '../APIEndPoints';
 
@@ -13,8 +14,8 @@ const initialState = {
 export const getCryptocurrenciesAsync = createAsyncThunk(
   'cryptocurrencies/getCryptocurrenciesAsync',
   async () => {
-    const response = await fetch(allCryptosURL);
-    const cryptos = await response.json();
+    const response = await axios.get(allCryptosURL);
+    const cryptos = await response.data;
     return cryptos;
   }
 );
