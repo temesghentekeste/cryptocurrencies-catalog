@@ -63,7 +63,7 @@ const CruyptoQuote = () => {
         <div className={styles.cryptoQuote}>
           <div className={styles.cryptoQuote__description}>
             <p>
-              {cryptoQuote.description && (
+              {cryptoQuote.description.en && (
                 <span
                   dangerouslySetInnerHTML={{
                     __html: DOMPurify.sanitize(cryptoQuote.description.en),
