@@ -6,8 +6,8 @@ import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { WaveLoading } from 'react-loadingg/lib';
-
+import { WaveLoading } from 'react-loadingg/lib';
+import parse from 'html-react-parser';
 import {
   faFacebook,
   faTwitter,
@@ -15,7 +15,6 @@ import {
   faReddit,
 } from '@fortawesome/free-brands-svg-icons';
 import createDOMPurify from 'dompurify';
-import { JSDOM } from 'jsdom';
 import { getCryptocurrencyQuoteAsync } from '../../redux/cryptoQuotesSlice';
 
 import styles from './CryptoQuote.module.css';
@@ -24,8 +23,6 @@ import ErrorAlert from '../../components/Error/Error';
 
 const CruyptoQuote = () => {
   // const [cryptoQuote, setCryptoQuote] = useState(null);
-  const { window } = new JSDOM('');
-  const DOMPurify = createDOMPurify(window);
   const { id } = useParams();
   const dispatch = useDispatch();
 
@@ -62,15 +59,7 @@ const CruyptoQuote = () => {
         </div>
         <div className={styles.cryptoQuote}>
           <div className={styles.cryptoQuote__description}>
-            <p>
-              {cryptoQuote.description.en !== '' && (
-                <span
-                  dangerouslySetInnerHTML={{
-                    __html: DOMPurify.sanitize(cryptoQuote.description.en),
-                  }}
-                />
-              )}
-            </p>
+            <p>{parse(`<span>${cryptoQuote.description.en}</span>`)}</p>
           </div>
           <div className={styles.cryptoQuote__Card}>
             <header>
