@@ -63,11 +63,13 @@ const CruyptoQuote = () => {
         <div className={styles.cryptoQuote}>
           <div className={styles.cryptoQuote__description}>
             <p>
-              <span
-                dangerouslySetInnerHTML={{
-                  __html: DOMPurify.sanitize(cryptoQuote.description.en),
-                }}
-              />
+              {cryptoQuote.description && (
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: DOMPurify.sanitize(cryptoQuote.description.en),
+                  }}
+                />
+              )}
             </p>
           </div>
           <div className={styles.cryptoQuote__Card}>
