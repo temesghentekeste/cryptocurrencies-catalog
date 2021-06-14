@@ -1,9 +1,8 @@
-import styles from './App.module.css';
 import CryptoCurrencies from '../../containers/CryptoCurrencies/CryptoCurrencies';
 
 function App() {
   return (
-    <div className={styles.app}>
+    <div>
       <CryptoCurrencies />
     </div>
   );
