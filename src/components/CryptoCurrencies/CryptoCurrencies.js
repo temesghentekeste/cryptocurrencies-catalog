@@ -1,16 +1,29 @@
 /* eslint-disable react/forbid-prop-types */
 /* eslint-disable operator-linebreak */
 /* eslint-disable object-curly-newline */
-/* eslint-disable  react/require-default-props */
-import PropTypes from 'prop-types';
+/* eslint-disable  comma-dangle */
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
 import { WaveLoading } from 'react-loadingg';
 import ErrorAlert from '../Error/Error';
 
+import { getCryptocurrenciesAsync } from '../../redux/cryptocurrenciesSlice';
 import CryptoCurrency from '../CryptoCurrency/CryptoCurrency';
 import styles from './CryptoCurrencies.module.css';
 
-const CryptoCurrencies = ({ cryptoCurrencies, loading }) => {
-  console.log(loading);
+const CryptoCurrencies = () => {
+  const dispatch = useDispatch();
+  const { loading, cryptoCurrencies, filter } = useSelector(
+    (state) => state.cryptocurrencies
+  );
+
+  console.log('Filter:', filter);
+
+  useEffect(() => {
+    dispatch(getCryptocurrenciesAsync());
+  }, [dispatch]);
+
   if (loading || loading === null || loading === undefined) {
     return <WaveLoading />;
   }
@@ -39,11 +52,6 @@ const CryptoCurrencies = ({ cryptoCurrencies, loading }) => {
         })}
     </div>
   );
-};
-
-CryptoCurrencies.propTypes = {
-  cryptoCurrencies: PropTypes.array.isRequired,
-  loading: PropTypes.bool,
 };
 
 export default CryptoCurrencies;
