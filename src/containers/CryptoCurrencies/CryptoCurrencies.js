@@ -6,10 +6,10 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { WaveLoading } from 'react-loadingg';
-import ErrorAlert from '../Error/Error';
+import ErrorAlert from '../../components/Error/Error';
 
 import { getCryptocurrenciesAsync } from '../../redux/cryptocurrenciesSlice';
-import CryptoCurrency from '../CryptoCurrency/CryptoCurrency';
+import CryptoCurrency from '../../components/CryptoCurrency/CryptoCurrency';
 import styles from './CryptoCurrencies.module.css';
 
 const CryptoCurrencies = () => {

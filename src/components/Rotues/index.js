@@ -2,7 +2,7 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import CryptoQuote from '../../containers/CryptoQuote/CryptoQuote';
 import Trending from '../../containers/Trending/Trending';
-import App from '../../containers/App/App';
+import App from '../App/App';
 import Header from '../Header/Header';
 import NotFound from '../NotFound/NotFound';
 import Footer from '../Footer/Footer';

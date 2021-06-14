@@ -1,5 +1,5 @@
 import styles from './App.module.css';
-import CryptoCurrencies from '../../components/CryptoCurrencies/CryptoCurrencies';
+import CryptoCurrencies from '../../containers/CryptoCurrencies/CryptoCurrencies';
 
 function App() {
   return (
