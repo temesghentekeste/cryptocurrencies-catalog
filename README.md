@@ -55,12 +55,7 @@ $ git clone git@github.com:temesghentekeste/cryptocurrencies-catalog.git
 $ cd cryptocurrencies-catalog
 ```
 
-- Open the project in your favorite code editor
-
-```
-
-
-## ✒️  Author <a name = "author"></a>
+## Author <a name = "author"></a>
 
 👤 **Temesghen Tekeste**
 
@@ -68,13 +63,11 @@ $ cd cryptocurrencies-catalog
 - Twitter: [@temesghentekes1](https://twitter.com/temesghentekes1)
 - Linkedin: [temsghen-tekeste](https://www.linkedin.com/in/temesghentekeste/)
 
-
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
 
 Feel free to check the [issues page](https://github.com/temesghentekeste/cryptocurrencies-catalog/issues).
-
 
 ## 👍 Show your support
 
@@ -85,4 +78,7 @@ Give a ⭐️ if you like this project!
 - Coingecko: [@coingecko](https://www.coingecko.com/en/api)
 - Stack Overflow: [@stackoverflow](https://stackoverflow.com/)
 - Microverse: [@microverse](https://www.microverse.org/)
+
+```
+
 ```
