@@ -14,7 +14,6 @@ import {
   faTelegram,
   faReddit,
 } from '@fortawesome/free-brands-svg-icons';
-import createDOMPurify from 'dompurify';
 import { getCryptocurrencyQuoteAsync } from '../../redux/cryptoQuotesSlice';
 
 import styles from './CryptoQuote.module.css';
@@ -43,7 +42,7 @@ const CruyptoQuote = () => {
   }, [dispatch]);
 
   if (loading || loading === null) {
-    return <h2>Loading</h2>;
+    return <WaveLoading />;
   }
 
   if (cryptoQuote && cryptoQuote.error) {

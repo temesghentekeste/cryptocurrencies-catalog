@@ -1,17 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 import styles from './Header.module.css';
 
-const Header = ({ handleFilter }) => {
+const Header = () => {
   const [keyword, setKeyword] = useState('');
   const history = useHistory();
-
-  useEffect(() => {
-    handleFilter(keyword);
-    history.push('/');
-  }, [keyword]);
 
   const handleChange = (e) => {
     setKeyword(e.target.value);
@@ -19,7 +13,6 @@ const Header = ({ handleFilter }) => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    handleFilter(keyword);
     history.push('/');
   };
 
@@ -48,10 +41,6 @@ const Header = ({ handleFilter }) => {
       </div>
     </header>
   );
-};
-
-Header.propTypes = {
-  handleFilter: PropTypes.func.isRequired,
 };
 
 export default Header;
