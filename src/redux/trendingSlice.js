@@ -4,7 +4,7 @@
 
 import axios from 'axios';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { trendingCryptosURL } from '../APIEndPoints';
+import { trendingCryptosURL } from '../API/APIEndPoints';
 
 const initialState = {
   loading: true,

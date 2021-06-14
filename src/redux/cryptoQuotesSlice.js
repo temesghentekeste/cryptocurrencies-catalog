@@ -3,7 +3,7 @@
 /* eslint-disable comma-dangle */
 import axios from 'axios';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { specificCryptoURL } from '../APIEndPoints';
+import { specificCryptoURL } from '../API/APIEndPoints';
 
 const initialState = {
   loading: true,

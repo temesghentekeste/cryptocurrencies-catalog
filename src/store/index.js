@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
-import cryptocurrenciesReducer from './cryptocurrenciesSlice';
-import cryptocurrencyQuoteReducer from './cryptoQuotesSlice';
-import cryptocurrencyTrendingReducer from './trendingSlice';
+import cryptocurrenciesReducer from '../redux/cryptocurrenciesSlice';
+import cryptocurrencyQuoteReducer from '../redux/cryptoQuotesSlice';
+import cryptocurrencyTrendingReducer from '../redux/trendingSlice';
 
 export default configureStore({
   reducer: {
