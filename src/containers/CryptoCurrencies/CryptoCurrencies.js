@@ -18,7 +18,7 @@ const CryptoCurrencies = () => {
     (state) => state.cryptocurrencies
   );
 
-  console.log('Filter:', filter);
+  let filteredCryptoCurrencies;
 
   useEffect(() => {
     dispatch(getCryptocurrenciesAsync());
@@ -31,13 +31,24 @@ const CryptoCurrencies = () => {
   if (cryptoCurrencies && cryptoCurrencies.error) {
     return <ErrorAlert />;
   }
+
+  console.log(filter);
+
+  if (!filter) {
+    filteredCryptoCurrencies = cryptoCurrencies;
+  } else {
+    filteredCryptoCurrencies = cryptoCurrencies.filter(
+      (c) => c.name.toLowerCase().includes(filter.toLowerCase()) ||
+        c.symbol.toLowerCase().includes(filter.toLowerCase())
+    );
+  }
   return (
     <div
       className={styles.availableCryptocurrencies}
       data-testid="cryptocurrencies"
     >
-      {cryptoCurrencies &&
-        cryptoCurrencies.map((crypto) => {
+      {filteredCryptoCurrencies &&
+        filteredCryptoCurrencies.map((crypto) => {
           const { id, symbol, name, current_price: price, image } = crypto;
           return (
             <CryptoCurrency
