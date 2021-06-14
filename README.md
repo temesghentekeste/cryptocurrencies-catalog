@@ -28,6 +28,7 @@ This project is a capstone project which is part of the requirements of the fulf
 - [ ] React-Create-App
 - [ ] Redux Tool Kit (RTK)
 - [ ] React-Redux
+- [ ] Axios
 - [ ] Material UI
 - [ ] Prop-Types
 - [ ] ESLint
