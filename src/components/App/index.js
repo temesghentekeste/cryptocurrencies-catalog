@@ -1,4 +1,4 @@
-import CryptoCurrencies from '../../containers/CryptoCurrencies/CryptoCurrencies';
+import CryptoCurrencies from '../../containers/CryptoCurrencies';
 
 function App() {
   return (

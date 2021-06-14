@@ -1,11 +1,11 @@
 /* eslint-disable comma-dangle */
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import CryptoQuote from '../../containers/CryptoQuote/CryptoQuote';
-import Trending from '../../containers/Trending/Trending';
-import App from '../App/App';
-import Header from '../Header/Header';
-import NotFound from '../NotFound/NotFound';
-import Footer from '../Footer/Footer';
+import CryptoQuote from '../../containers/CryptoQuote';
+import Trending from '../../containers/Trending';
+import App from '../App';
+import Header from '../Header';
+import NotFound from '../NotFound';
+import Footer from '../Footer';
 
 const Routes = () => (
   <Router>

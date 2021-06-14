@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import NotFound from '../../components/NotFound/NotFound';
+import NotFound from '../../components/NotFound';
 
 let getByTestId;
 

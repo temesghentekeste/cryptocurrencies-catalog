@@ -3,7 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import CryptoCurrency from '../../components/CryptoCurrency/CryptoCurrency';
+import CryptoCurrency from '../../components/CryptoCurrency';
 
 let getByTestId;
 

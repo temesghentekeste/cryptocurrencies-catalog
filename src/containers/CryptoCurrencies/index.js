@@ -6,10 +6,10 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { WaveLoading } from 'react-loadingg';
-import ErrorAlert from '../../components/Error/Error';
+import ErrorAlert from '../../components/Error';
 
 import { getCryptocurrenciesAsync } from '../../redux/cryptocurrenciesSlice';
-import CryptoCurrency from '../../components/CryptoCurrency/CryptoCurrency';
+import CryptoCurrency from '../../components/CryptoCurrency';
 import styles from './CryptoCurrencies.module.css';
 
 const CryptoCurrencies = () => {
@@ -31,8 +31,6 @@ const CryptoCurrencies = () => {
   if (cryptoCurrencies && cryptoCurrencies.error) {
     return <ErrorAlert />;
   }
-
-  console.log(filter);
 
   if (!filter) {
     filteredCryptoCurrencies = cryptoCurrencies;
