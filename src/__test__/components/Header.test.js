@@ -4,14 +4,18 @@ import renderer from 'react-test-renderer';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import Header from '../../containers/Header';
+import { Provider } from 'react-redux';
+import store from '../../store';
 
 let getByTestId;
 
 beforeEach(() => {
   const component = render(
-    <Router>
-      <Header handleFilter={() => 'Header'} />
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Header handleFilter={() => 'Header'} />
+      </Router>
+    </Provider>
   );
   getByTestId = component.getByTestId;
 });
@@ -19,9 +23,11 @@ beforeEach(() => {
 it('renders the Header component', () => {
   const component = renderer
     .create(
-      <Router>
-        <Header handleFilter={() => 'Header'} />
-      </Router>
+      <Provider store={store}>
+        <Router>
+          <Header handleFilter={() => 'Header'} />
+        </Router>
+      </Provider>
     )
     .toJSON();
 

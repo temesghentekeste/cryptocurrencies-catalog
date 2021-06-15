@@ -1,34 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the CryptoCurrencies component 1`] = `
-<div
-  className="sc-gzVnrw lGDtb"
-  size="default"
-  style={
-    Object {
-      "bottom": 0,
-      "left": 0,
-      "margin": "auto",
-      "position": "absolute",
-      "right": 0,
-      "top": 0,
-    }
-  }
->
+Array [
   <div
-    className="sc-htoDjs sc-dnqmqq SDTxR"
-  />
-  <div
-    className="sc-htoDjs sc-iwsKbI kUYcSE"
-  />
-  <div
-    className="sc-htoDjs sc-gZMcBi eqPTXf"
-  />
-  <div
-    className="sc-htoDjs sc-gqjmRU iFOlOR"
-  />
-  <div
-    className="sc-htoDjs sc-VigVT kWPrjt"
-  />
-</div>
+    className="availableCryptocurrencies"
+    data-testid="cryptocurrencies"
+  />,
+  ",",
+]
 `;
