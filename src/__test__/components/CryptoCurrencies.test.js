@@ -2,9 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { BrowserRouter as Router } from 'react-router-dom';
 import '@testing-library/jest-dom/extend-expect';
-import CryptoCurrencies from '../../containers/CryptoCurrencies';
 import { Provider } from 'react-redux';
+import CryptoCurrencies from '../../containers/CryptoCurrencies';
 import store from '../../store';
+
 const cryptocurrencies = [
   {
     id: 'bitcoin',
@@ -78,7 +79,7 @@ it('renders the CryptoCurrencies component', () => {
           <CryptoCurrencies cryptoCurrencies={cryptocurrencies} />
         </Router>
         ,
-      </Provider>
+      </Provider>,
     )
     .toJSON();
 
