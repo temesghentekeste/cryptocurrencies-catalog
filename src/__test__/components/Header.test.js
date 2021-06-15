@@ -3,7 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import Header from '../../components/Header';
+import Header from '../../containers/Header';
 
 let getByTestId;
 
@@ -11,7 +11,7 @@ beforeEach(() => {
   const component = render(
     <Router>
       <Header handleFilter={() => 'Header'} />
-    </Router>,
+    </Router>
   );
   getByTestId = component.getByTestId;
 });
@@ -21,7 +21,7 @@ it('renders the Header component', () => {
     .create(
       <Router>
         <Header handleFilter={() => 'Header'} />
-      </Router>,
+      </Router>
     )
     .toJSON();
 
