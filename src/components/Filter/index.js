@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import styles from './Filter.module.css';
 
 const Filter = ({ handleFilter }) => {
-  const [keyword, setKeyword] = useState('');
+  const [keyword, setKeyword] = useState();
 
   useEffect(() => {
     handleFilter(keyword);
@@ -10,7 +11,7 @@ const Filter = ({ handleFilter }) => {
 
   return (
     <>
-      <form>
+      <form className={styles.searchForm}>
         <input
           type="text"
           name="keyword"

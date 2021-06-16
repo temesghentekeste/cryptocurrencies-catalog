@@ -1,0 +1,23 @@
+.searchForm {
+  width: 50%;
+  margin: 1rem auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.searchForm input {
+  padding: 0.4rem 0.6rem;
+  display: block;
+  width: 100%;
+  flex: 1;
+  outline: none;
+  border: 0;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .searchForm {
+    width: 100%;
+  }
+}
