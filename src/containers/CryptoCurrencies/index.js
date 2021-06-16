@@ -11,6 +11,7 @@ import ErrorAlert from '../../components/Error';
 import { getCryptocurrenciesAsync } from '../../redux/cryptocurrenciesSlice';
 import CryptoCurrency from '../../components/CryptoCurrency';
 import styles from './CryptoCurrencies.module.css';
+import Filter from '../../components/Filter';
 
 const CryptoCurrencies = () => {
   const dispatch = useDispatch();
@@ -41,24 +42,29 @@ const CryptoCurrencies = () => {
     );
   }
   return (
-    <div
-      className={styles.availableCryptocurrencies}
-      data-testid="cryptocurrencies"
-    >
-      {filteredCryptoCurrencies &&
-        filteredCryptoCurrencies.map((crypto) => {
-          const { id, symbol, name, current_price: price, image } = crypto;
-          return (
-            <CryptoCurrency
-              key={id}
-              id={id}
-              symbol={symbol}
-              name={name}
-              price={price}
-              image={image}
-            />
-          );
-        })}
+    <div>
+      <div>
+        <Filter />
+      </div>
+      <div
+        className={styles.availableCryptocurrencies}
+        data-testid="cryptocurrencies"
+      >
+        {filteredCryptoCurrencies &&
+          filteredCryptoCurrencies.map((crypto) => {
+            const { id, symbol, name, current_price: price, image } = crypto;
+            return (
+              <CryptoCurrency
+                key={id}
+                id={id}
+                symbol={symbol}
+                name={name}
+                price={price}
+                image={image}
+              />
+            );
+          })}
+      </div>
     </div>
   );
 };
