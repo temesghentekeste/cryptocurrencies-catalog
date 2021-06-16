@@ -1,12 +1,11 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable  object-curly-newline */
-/* eslint-disable  react/jsx-one-expression-per-line */
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styles from './CryptoCurrency.module.css';
 import mainStyle from '../../index.module.css';
 
-const CryptoCurrency = ({ id, symbol, name, price, image }) => (
+const CryptoCurrency = ({
+  id, symbol, name, price, image,
+}) => (
   <Link to={`/cryptoquote/${id}`}>
     <div className={styles.cryptoCurrencyCard} data-testid="cryptocurrency">
       <header data-testid="cryptocurrency-header">
@@ -22,7 +21,10 @@ const CryptoCurrency = ({ id, symbol, name, price, image }) => (
       </header>
 
       <div className={styles.cryptoCurrencyCard__body}>
-        <span data-testid="cryptocurrency-price">Price: ${price}</span>
+        <span data-testid="cryptocurrency-price">
+          Price: $
+          {price}
+        </span>
         <img src={image} alt={name} />
       </div>
 

@@ -1,9 +1,3 @@
-/* eslint-disable comma-dangle */
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
-/* eslint-disable react/jsx-one-expression-per-line */
-/* eslint-disable operator-linebreak
- */
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
@@ -28,21 +22,15 @@ const useStyles = makeStyles({
 });
 
 const Trending = () => {
-  // const [trending, setTrending] = useState(null);
   const dispatch = useDispatch();
 
   const trending = useSelector(
-    (state) => state.trendingcryptocurrencies.trending
+    (state) => state.trendingcryptocurrencies.trending,
   );
 
   const loading = useSelector(
-    (state) => state.trendingcryptocurrencies.loading
+    (state) => state.trendingcryptocurrencies.loading,
   );
-
-  // useEffect(async () => {
-  //   const response = await dispatch(getTrendingCryptosAsync());
-  //   setTrending(await response.payload);
-  // }, []);
 
   useEffect(() => {
     dispatch(getTrendingCryptosAsync());
@@ -59,12 +47,13 @@ const Trending = () => {
   }
 
   return (
-    trending &&
-    trending.coins.length > 0 && (
+    trending
+    && trending.coins.length > 0 && (
       <>
         <div className={styles.trending}>
           <h3>
-            Top-7 trending coins on CoinGecko{' '}
+            Top-7 trending coins on CoinGecko
+            {' '}
             <span>
               Searched by users in the last 24 hours (Ordered by most popular
               first)
@@ -99,7 +88,9 @@ const Trending = () => {
                         scope="row"
                         className={styles.trending__name}
                       >
-                        {name} <img src={thumb} alt={name} />
+                        {name}
+                        {' '}
+                        <img src={thumb} alt={name} />
                       </TableCell>
                       <TableCell align="right">{symbol}</TableCell>
                       <TableCell align="right">{price}</TableCell>

@@ -1,7 +1,3 @@
-/* eslint-disable react/forbid-prop-types */
-/* eslint-disable operator-linebreak */
-/* eslint-disable object-curly-newline */
-/* eslint-disable  comma-dangle */
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -19,7 +15,7 @@ import Filter from '../../components/Filter';
 const CryptoCurrencies = () => {
   const dispatch = useDispatch();
   const { loading, cryptoCurrencies, filter } = useSelector(
-    (state) => state.cryptocurrencies
+    (state) => state.cryptocurrencies,
   );
 
   let filteredCryptoCurrencies;
@@ -44,8 +40,8 @@ const CryptoCurrencies = () => {
     filteredCryptoCurrencies = cryptoCurrencies;
   } else {
     filteredCryptoCurrencies = cryptoCurrencies.filter(
-      (c) => c.name.toLowerCase().includes(filter.toLowerCase()) ||
-        c.symbol.toLowerCase().includes(filter.toLowerCase())
+      (c) => c.name.toLowerCase().includes(filter.toLowerCase())
+        || c.symbol.toLowerCase().includes(filter.toLowerCase()),
     );
   }
   return (
@@ -57,9 +53,11 @@ const CryptoCurrencies = () => {
         className={styles.availableCryptocurrencies}
         data-testid="cryptocurrencies"
       >
-        {filteredCryptoCurrencies &&
-          filteredCryptoCurrencies.map((crypto) => {
-            const { id, symbol, name, current_price: price, image } = crypto;
+        {filteredCryptoCurrencies
+          && filteredCryptoCurrencies.map((crypto) => {
+            const {
+              id, symbol, name, current_price: price, image,
+            } = crypto;
             return (
               <CryptoCurrency
                 key={id}

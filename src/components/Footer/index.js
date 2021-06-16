@@ -1,6 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
-/* eslint-disable no-undef */
 import styles from './Footer.module.css';
 
 const Footer = () => (

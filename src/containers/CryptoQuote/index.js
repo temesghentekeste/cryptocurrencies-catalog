@@ -1,8 +1,4 @@
-/* eslint-disable react/jsx-one-expression-per-line */
-/* eslint-disable comma-dangle */
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/no-danger */
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -21,21 +17,13 @@ import mainStyles from '../../index.module.css';
 import ErrorAlert from '../../components/Error';
 
 const CruyptoQuote = () => {
-  // const [cryptoQuote, setCryptoQuote] = useState(null);
   const { id } = useParams();
   const dispatch = useDispatch();
 
   const cryptoQuote = useSelector(
-    (state) => state.cryptocurrencyquote.cryptoQuote
+    (state) => state.cryptocurrencyquote.cryptoQuote,
   );
   const loading = useSelector((state) => state.cryptocurrencyquote.loading);
-
-  // useEffect(async () => {
-  //   const response = await dispatch(getCryptocurrencyQuoteAsync(id));
-  //   setCryptoQuote(await response.payload);
-
-  //   return () => setCryptoQuote(null);
-  // }, []);
 
   useEffect(() => {
     dispatch(getCryptocurrencyQuoteAsync(id));
@@ -65,49 +53,71 @@ const CruyptoQuote = () => {
               <h2>{cryptoQuote.name}</h2>
               <h2>{cryptoQuote.symbol}</h2>
               <h2>
-                ${cryptoQuote.market_data.current_price.usd.toLocaleString()}
+                $
+                {cryptoQuote.market_data.current_price.usd.toLocaleString()}
               </h2>
             </header>
 
             <div className={styles.cryptoQuote__stats}>
               <div className={styles.cryptoQuote__stats__lowHigh}>
-                <span>Day Low: ${cryptoQuote.market_data.low_24h.usd}</span>
-                <span>Day High: ${cryptoQuote.market_data.high_24h.usd}</span>
+                <span>
+                  Day Low: $
+                  {cryptoQuote.market_data.low_24h.usd}
+                </span>
+                <span>
+                  Day High: $
+                  {cryptoQuote.market_data.high_24h.usd}
+                </span>
 
                 <span>
-                  Price change % (in 1 hour):{' '}
-                  {cryptoQuote.market_data.price_change_percentage_24h}%
+                  Price change % (in 1 hour):
+                  {' '}
+                  {cryptoQuote.market_data.price_change_percentage_24h}
+                  %
                 </span>
               </div>
 
               <div className={styles.cryptoQuote__stats__price}>
                 {cryptoQuote.genesis_date && (
                   <p>
-                    Genesis Date: <span>{cryptoQuote.genesis_date}</span>
+                    Genesis Date:
+                    {' '}
+                    <span>{cryptoQuote.genesis_date}</span>
                   </p>
                 )}
 
                 <p>
-                  Market Cap:{' '}
+                  Market Cap:
+                  {' '}
                   <span>
-                    ${cryptoQuote.market_data.market_cap.usd.toLocaleString()}
+                    $
+                    {cryptoQuote.market_data.market_cap.usd.toLocaleString()}
                   </span>
                 </p>
 
                 <p>
-                  Market Cap Rank: <span>{cryptoQuote.market_cap_rank}</span>
+                  Market Cap Rank:
+                  {' '}
+                  <span>{cryptoQuote.market_cap_rank}</span>
                 </p>
                 <p>
-                  Developer Score: <span>{cryptoQuote.developer_score}</span>
+                  Developer Score:
+                  {' '}
+                  <span>{cryptoQuote.developer_score}</span>
                 </p>
                 <p>
-                  Community Score: <span>{cryptoQuote.community_score}</span>
+                  Community Score:
+                  {' '}
+                  <span>{cryptoQuote.community_score}</span>
                 </p>
                 <p>
-                  Liquidity Score: <span>{cryptoQuote.liquidity_score}</span>
+                  Liquidity Score:
+                  {' '}
+                  <span>{cryptoQuote.liquidity_score}</span>
                 </p>
                 <p>
-                  Public Interest Score:{' '}
+                  Public Interest Score:
+                  {' '}
                   <span>{cryptoQuote.public_interest_score}</span>
                 </p>
               </div>
@@ -115,9 +125,18 @@ const CruyptoQuote = () => {
 
             <footer>
               <span>Converted volume </span>
-              <span>btc: {cryptoQuote.tickers[0].converted_volume.btc}</span>
-              <span>eth: {cryptoQuote.tickers[0].converted_volume.eth}</span>
-              <span>usd: {cryptoQuote.tickers[0].converted_volume.usd}</span>
+              <span>
+                btc:
+                {cryptoQuote.tickers[0].converted_volume.btc}
+              </span>
+              <span>
+                eth:
+                {cryptoQuote.tickers[0].converted_volume.eth}
+              </span>
+              <span>
+                usd:
+                {cryptoQuote.tickers[0].converted_volume.usd}
+              </span>
             </footer>
           </div>
         </div>
