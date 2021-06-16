@@ -8,7 +8,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { WaveLoading } from 'react-loadingg';
 import ErrorAlert from '../../components/Error';
 
-import { getCryptocurrenciesAsync } from '../../redux/cryptocurrenciesSlice';
+import {
+  changeFilter,
+  getCryptocurrenciesAsync,
+} from '../../redux/cryptocurrenciesSlice';
 import CryptoCurrency from '../../components/CryptoCurrency';
 import styles from './CryptoCurrencies.module.css';
 import Filter from '../../components/Filter';
@@ -24,6 +27,10 @@ const CryptoCurrencies = () => {
   useEffect(() => {
     dispatch(getCryptocurrenciesAsync());
   }, [dispatch]);
+
+  const handleFilter = (input) => {
+    dispatch(changeFilter(input));
+  };
 
   if (loading || loading === null || loading === undefined) {
     return <WaveLoading />;
@@ -44,7 +51,7 @@ const CryptoCurrencies = () => {
   return (
     <div>
       <div>
-        <Filter />
+        <Filter handleFilter={handleFilter} />
       </div>
       <div
         className={styles.availableCryptocurrencies}

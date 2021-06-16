@@ -1,17 +1,16 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import styles from './Filter.module.css';
 
 const Filter = ({ handleFilter }) => {
   const [keyword, setKeyword] = useState('');
 
-  const handleSubmit = () => {
+  useEffect(() => {
     handleFilter(keyword);
-  };
+  }, [keyword]);
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form>
         <input
           type="text"
           name="keyword"
@@ -19,7 +18,6 @@ const Filter = ({ handleFilter }) => {
           value={keyword}
           onChange={(e) => setKeyword(e.target.value)}
         />
-        <input type="submit" value="Search" className={styles.btnSubmit} />
       </form>
     </>
   );
