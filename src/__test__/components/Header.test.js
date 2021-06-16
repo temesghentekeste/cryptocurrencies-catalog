@@ -3,19 +3,15 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import { Provider } from 'react-redux';
 import Header from '../../components/Header';
-import store from '../../store';
 
 let getByTestId;
 
 beforeEach(() => {
   const component = render(
-    <Provider store={store}>
-      <Router>
-        <Header handleFilter={() => 'Header'} />
-      </Router>
-    </Provider>
+    <Router>
+      <Header handleFilter={() => 'Header'} />
+    </Router>
   );
   getByTestId = component.getByTestId;
 });
@@ -23,11 +19,9 @@ beforeEach(() => {
 it('renders the Header component', () => {
   const component = renderer
     .create(
-      <Provider store={store}>
-        <Router>
-          <Header handleFilter={() => 'Header'} />
-        </Router>
-      </Provider>
+      <Router>
+        <Header handleFilter={() => 'Header'} />
+      </Router>
     )
     .toJSON();
 

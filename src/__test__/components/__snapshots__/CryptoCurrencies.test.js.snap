@@ -2,10 +2,24 @@
 
 exports[`renders the CryptoCurrencies component 1`] = `
 Array [
-  <div
-    className="availableCryptocurrencies"
-    data-testid="cryptocurrencies"
-  />,
+  <div>
+    <div>
+      <form
+        className="searchForm"
+      >
+        <input
+          name="keyword"
+          onChange={[Function]}
+          placeholder="Search for something. Ex. iExec, Bitcoin, DOGEUSD..."
+          type="text"
+        />
+      </form>
+    </div>
+    <div
+      className="availableCryptocurrencies"
+      data-testid="cryptocurrencies"
+    />
+  </div>,
   ",",
 ]
 `;

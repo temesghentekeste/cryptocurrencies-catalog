@@ -25,25 +25,5 @@ exports[`renders the Header component 1`] = `
       </h3>
     </a>
   </div>
-  <div
-    className="header__search"
-  >
-    <input
-      name="keyword"
-      onChange={[Function]}
-      placeholder="Search for something. Ex. iExec, Bitcoin, DOGEUSD..."
-      type="text"
-      value=""
-    />
-    <form
-      onSubmit={[Function]}
-    >
-      <input
-        className="btnSubmit"
-        type="submit"
-        value="Search"
-      />
-    </form>
-  </div>
 </header>
 `;
