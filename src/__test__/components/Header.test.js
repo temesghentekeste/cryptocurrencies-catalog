@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { Provider } from 'react-redux';
-import Header from '../../containers/Header';
+import Header from '../../components/Header';
 import store from '../../store';
 
 let getByTestId;
@@ -15,7 +15,7 @@ beforeEach(() => {
       <Router>
         <Header handleFilter={() => 'Header'} />
       </Router>
-    </Provider>,
+    </Provider>
   );
   getByTestId = component.getByTestId;
 });
@@ -27,7 +27,7 @@ it('renders the Header component', () => {
         <Router>
           <Header handleFilter={() => 'Header'} />
         </Router>
-      </Provider>,
+      </Provider>
     )
     .toJSON();
 
