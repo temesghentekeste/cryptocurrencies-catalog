@@ -15,6 +15,8 @@ This project is a capstone project which is part of the requirements of the fulf
 <p align="center">
 <a href="#with">Built with</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 <a href="#live">Live Demo</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#start">Getting Started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#test">Test</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 <a href="#sc">Screenshots</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 <a href="#gs">Getting started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 <a href="#author">Author</a>
@@ -37,6 +39,18 @@ This project is a capstone project which is part of the requirements of the fulf
 - [ ] npm
 - [ ] CSS
 - [ ] ES6
+
+## :heavy_check_mark: Getting Started <a name = "start"></a>
+
+- [ ] git clone [https://github.com/temesghentekeste/cryptocurrencies-catalog](https://github.com/temesghentekeste/cryptocurrencies-catalog/tree/develop)
+- [ ] cd cryptocurrencies-catalog
+- [ ] npm install
+- [ ] npm start
+
+## :eyes: Run Tests <a name = "test"></a>
+
+- [ ] cd cryptocurrencies-catalog
+- [ ] npm run test
 
 ## 🔴 Live Demo <a name = "live"></a>
 
