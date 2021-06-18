@@ -58,8 +58,8 @@ This project is a capstone project which is part of the requirements of the fulf
 
 ## Screenshots <a name = "sc"></a>
 
-![screenshot](./public/screenshots/desktop.gif)
-![screenshot](./public/screenshots/mobile.gif)
+![screenshot](./public/screenshots/desktop_screenshot.gif)
+![screenshot](./public/screenshots/mobile_screenshot.gif)
 
 ## Getting Started <a name = "gs"></a>
 
