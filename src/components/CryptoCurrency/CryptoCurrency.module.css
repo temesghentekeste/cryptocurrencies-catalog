@@ -1,0 +1,59 @@
+.cryptoCurrencyCard {
+  width: 15rem;
+  margin-bottom: 1.4rem;
+  margin-right: 2rem;
+  padding: 1rem;
+  border: 1px solid gray;
+  background: #444;
+  color: white;
+  border-radius: 5px;
+}
+
+.cryptoCurrencyCard__symbol {
+  margin-bottom: 1rem;
+  padding: 0.4rem 0.6rem;
+  background: #998695;
+  color: #fff;
+  font-weight: 700;
+}
+
+.cryptoCurrencyCard__body {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cryptoCurrencyCard button {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  margin: 1rem 0 0;
+  background: rgb(75, 95, 73);
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.cryptoCurrencyCard img {
+  display: block;
+  width: 90%;
+  margin: 1rem auto;
+}
+
+@media screen and (max-width: 982px) {
+  .cryptoCurrencyCard {
+    width: 20rem;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .cryptoCurrencyCard {
+    width: 18rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cryptoCurrencyCard {
+    width: 100%;
+  }
+}

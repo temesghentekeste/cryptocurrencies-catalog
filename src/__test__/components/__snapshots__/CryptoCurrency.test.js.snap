@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the CryptoCurrency component 1`] = `
+<a
+  href="/cryptoquote/Bitcoin"
+  onClick={[Function]}
+>
+  <div
+    className="cryptoCurrencyCard"
+    data-testid="cryptocurrency"
+  >
+    <header
+      data-testid="cryptocurrency-header"
+    >
+      <p
+        className="badge"
+        data-testid="cryptocurrency-name"
+      >
+        Bitcoin
+      </p>
+      <p
+        className="cryptoCurrencyCard__symbol"
+        data-testid="cryptocurrency-symbol"
+      >
+        btc
+      </p>
+    </header>
+    <div
+      className="cryptoCurrencyCard__body"
+    >
+      <span
+        data-testid="cryptocurrency-price"
+      >
+        Price: $
+        37255
+      </span>
+      <img
+        alt="Bitcoin"
+        src="https://ichef.bbci.co.uk/news/976/cpsprodpb/6127/production/_117317842_065760657.jpg"
+      />
+    </div>
+    <footer>
+      <button
+        type="button"
+      >
+        More...
+      </button>
+    </footer>
+  </div>
+</a>
+`;

@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+# Cryptocurrencies Catalog
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a capstone project which is part of the requirements of the fulfillment of the microverse main curriculum in the React-Redux section. It is SPA which fetches and renders resources from a given API endpoint. The site allows users to view the top 100 crypto coins in the home page. Detailed info of a particular crypto coin is shown when a particualr cryptocurrency card is clicked. In addition, the top trending coins of the day are rendered in the trending dashboard page.
 
-## Available Scripts
+<div align="center">
 
-In the project directory, you can run:
+[![View Code](https://img.shields.io/badge/View%20-Code-green)](https://github.com/temesghentekeste/cryptocurrencies-catalog)
+[![Github Issues](https://img.shields.io/badge/GitHub-Issues-orange)](https://github.com/temesghentekeste/cryptocurrencies-catalog/issues)
+[![GitHub Pull Requests](https://img.shields.io/badge/GitHub-Pull%20Requests-blue)](https://github.com/temesghentekeste/cryptocurrencies-catalog/pulls)
 
-### `npm start`
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 📝 Content
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<p align="center">
+<a href="#with">Built with</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#live">Live Demo</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#start">Getting Started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#test">Test</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#sc">Screenshots</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#author">Author</a>
+</p>
 
-### `npm test`
+## 🔧 Built with<a name = "with"></a>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [ ] Node.js
+- [ ] React
+- [ ] React-DOM
+- [ ] React-Create-App
+- [ ] Redux Tool Kit (RTK)
+- [ ] React-Redux
+- [ ] Axios
+- [ ] Material UI
+- [ ] Prop-Types
+- [ ] ESLint
+- [ ] StyleLint
+- [ ] Heroku
+- [ ] npm
+- [ ] CSS
+- [ ] ES6
 
-### `npm run build`
+## :heavy_check_mark: Getting Started <a name = "start"></a>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [ ] git clone [https://github.com/temesghentekeste/cryptocurrencies-catalog](https://github.com/temesghentekeste/cryptocurrencies-catalog/tree/develop)
+- [ ] cd cryptocurrencies-catalog
+- [ ] npm install
+- [ ] npm start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## :eyes: Run Tests <a name = "test"></a>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [ ] cd cryptocurrencies-catalog
+- [ ] npm run test
 
-### `npm run eject`
+## 🔴 Live Demo <a name = "live"></a>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+\*Click [here](https://cryptocoins-temesghen.herokuapp.com/) in order to see a Live Demo of this project.\*\*
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Screenshots <a name = "sc"></a>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Desktop
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![screenshot](./public/screenshots/desktop_sc.gif)
 
-## Learn More
+### Mobile
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![screenshot](./public/screenshots/mobile_sc.gif)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Getting Started <a name = "gs"></a>
 
-### Code Splitting
+To get a local copy of the repository please run the following commands on your terminal:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+$ git clone git@github.com:temesghentekeste/cryptocurrencies-catalog.git
+$ cd cryptocurrencies-catalog
+```
 
-### Analyzing the Bundle Size
+## Author <a name = "author"></a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+👤 **Temesghen Tekeste**
 
-### Making a Progressive Web App
+- Github: [@temesghentekeste](https://github.com/temesghentekeste)
+- Twitter: [@temesghentekes1](https://twitter.com/temesghentekes1)
+- Linkedin: [temsghen-tekeste](https://www.linkedin.com/in/temesghentekeste/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🤝 Contributing
 
-### Advanced Configuration
+Contributions, issues and feature requests are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Feel free to check the [issues page](https://github.com/temesghentekeste/cryptocurrencies-catalog/issues).
 
-### Deployment
+## 👍 Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Give a ⭐️ if you like this project!
 
-### `npm run build` fails to minify
+## :clap: Acknowledgements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Coingecko: [@coingecko](https://www.coingecko.com/en/api)
+- Stack Overflow: [@stackoverflow](https://stackoverflow.com/)
+- Microverse: [@microverse](https://www.microverse.org/)
+
+```
+
+```

@@ -1,0 +1,119 @@
+.cryptoQuoteTitle {
+  display: flex;
+  align-items: center;
+}
+
+.cryptoQuoteTitle h2 {
+  margin-left: 1rem;
+  color: #f79427;
+  font-weight: 700;
+  font-size: 2.4rem;
+}
+
+.cryptoQuote {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cryptoQuote__description {
+  margin-right: 2rem;
+  padding: 1rem;
+  flex: 0 0 50%;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #333;
+  border-right: 4px solid orange;
+}
+
+.cryptoQuote__description a {
+  color: orange;
+  font-weight: 700;
+}
+
+.cryptoQuote__Card {
+  margin: 0 auto;
+  background: #7e8083;
+  padding: 1rem;
+  color: #fff;
+  flex: 0 0 40%;
+  align-self: flex-start;
+  border: 1px solid green;
+}
+
+.cryptoQuote__Card header {
+  background: #4a4b4b;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cryptoQuote__stats {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cryptoQuote__stats__lowHigh > * {
+  margin-bottom: 0.5rem;
+}
+
+.cryptoQuote__stats__lowHigh,
+.cryptoQuote__stats__price {
+  width: 100%;
+  padding: 1rem 0.5rem;
+  background: #998695;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-right: 0.8rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.cryptoQuote__stats__price {
+  background: rgb(208, 207, 216);
+  margin-top: 1rem;
+  flex-direction: column;
+  color: rgb(68, 80, 52);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.cryptoQuote__stats__price p {
+  padding: 1rem;
+  border-bottom: 1px dashed #fff;
+}
+
+.cryptoQuote__Card footer {
+  padding: 1rem;
+  background: #4a4b4b;
+  margin-top: 1rem;
+  border-radius: 5px;
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+}
+
+@media screen and (max-width: 854px) {
+  .cryptoQuote__Card {
+    flex: 1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cryptoQuote {
+    flex-direction: column;
+  }
+
+  .cryptoQuote__description {
+    order: 1;
+    border-right: none;
+  }
+}

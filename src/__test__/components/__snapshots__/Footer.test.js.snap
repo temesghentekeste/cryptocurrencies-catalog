@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the Footer component 1`] = `
+<footer
+  className="mainFooter"
+  data-testid="footer"
+>
+  <p>
+    <a
+      href="https://www.temesghen.me"
+      rel="noreferrer"
+      target="_blank"
+    >
+      ©Temesghen Tekeste  
+    </a>
+    2021, All Rights Reserved
+  </p>
+</footer>
+`;

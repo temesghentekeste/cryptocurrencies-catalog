@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the Header component 1`] = `
+<header
+  className="header"
+  data-testid="header"
+>
+  <div
+    className="header__right"
+  >
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      <h1>
+        Cryptocurrencies
+      </h1>
+    </a>
+    <a
+      href="/trending"
+      onClick={[Function]}
+    >
+      <h3>
+        Trending Dashboard
+      </h3>
+    </a>
+  </div>
+</header>
+`;

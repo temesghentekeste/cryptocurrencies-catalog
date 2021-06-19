@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the CryptoCurrencies component 1`] = `
+Array [
+  <div>
+    <div>
+      <form
+        className="searchForm"
+      >
+        <input
+          name="keyword"
+          onChange={[Function]}
+          placeholder="Search for something. Ex. iExec, Bitcoin, DOGEUSD..."
+          type="text"
+        />
+      </form>
+    </div>
+    <div
+      className="availableCryptocurrencies"
+      data-testid="cryptocurrencies"
+    />
+  </div>,
+  ",",
+]
+`;
